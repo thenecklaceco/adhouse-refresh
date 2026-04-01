@@ -126,245 +126,193 @@
 {% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
 
 {% style %}
-  .ai-real-vs-ai-{{ ai_gen_id }} {
+  .ai-honest-pricing-{{ ai_gen_id }} {
     display: block;
     width: 100%;
     padding: 40px 20px;
     background-color: {{ block.settings.section_bg_color }};
   }
 
-  .ai-real-vs-ai-container-{{ ai_gen_id }} {
+  .ai-honest-pricing-container-{{ ai_gen_id }} {
     max-width: 1200px;
     margin: 0 auto;
   }
 
-  .ai-real-vs-ai-header-{{ ai_gen_id }} {
+  .ai-honest-pricing-header-{{ ai_gen_id }} {
     text-align: center;
     margin-bottom: 40px;
   }
 
-  .ai-real-vs-ai-heading-{{ ai_gen_id }} {
+  .ai-honest-pricing-heading-{{ ai_gen_id }} {
     font-size: {{ block.settings.desktop_heading_size }}px;
     color: {{ block.settings.text_color }};
     margin: 0 0 12px;
-    font-weight: 600;
+    font-weight: 700;
     font-family: {{ block.settings.heading_font.family }}, {{ block.settings.heading_font.fallback_families }};
   }
 
-  .ai-real-vs-ai-subheading-{{ ai_gen_id }} {
-    font-size: 16px;
+  .ai-honest-pricing-subheading-{{ ai_gen_id }} {
+    font-size: 18px;
     color: {{ block.settings.text_color }};
     opacity: 0.8;
     margin: 0;
   }
 
-  .ai-real-vs-ai-comparison-{{ ai_gen_id }} {
+  .ai-honest-pricing-cards-{{ ai_gen_id }} {
     display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    gap: 24px;
-    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 32px;
   }
 
-  .ai-real-vs-ai-card-{{ ai_gen_id }} {
+  .ai-honest-pricing-card-{{ ai_gen_id }} {
     background-color: {{ block.settings.card_bg_color }};
     border-radius: 18px;
-    padding: 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  }
-
-  .ai-real-vs-ai-image-wrapper-{{ ai_gen_id }} {
+    padding: 32px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
     position: relative;
-    width: 100%;
-    aspect-ratio: 1;
-    border-radius: 12px;
     overflow: hidden;
-    margin-bottom: 16px;
   }
 
-  .ai-real-vs-ai-image-wrapper-{{ ai_gen_id }} img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .ai-real-vs-ai-placeholder-{{ ai_gen_id }} {
-    width: 100%;
-    height: 100%;
-    background-color: #f4f4f4;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .ai-real-vs-ai-placeholder-{{ ai_gen_id }} svg {
-    width: 60%;
-    height: 60%;
-    opacity: 0.3;
-  }
-
-  .ai-real-vs-ai-badge-{{ ai_gen_id }} {
+  .ai-honest-pricing-card-{{ ai_gen_id }}::before {
+    content: '';
     position: absolute;
-    top: 12px;
-    left: 12px;
-    padding: 6px 12px;
-    border-radius: 6px;
-    font-size: 12px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+  }
+
+  .ai-honest-pricing-card-left-{{ ai_gen_id }}::before {
+    background-color: {{ block.settings.card_1_accent }};
+  }
+
+  .ai-honest-pricing-card-right-{{ ai_gen_id }}::before {
+    background-color: {{ block.settings.card_2_accent }};
+  }
+
+  .ai-honest-pricing-card-title-{{ ai_gen_id }} {
+    font-size: 20px;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-
-  .ai-real-vs-ai-badge-left-{{ ai_gen_id }} {
-    background-color: {{ block.settings.left_badge_color }};
-    color: #ffffff;
-  }
-
-  .ai-real-vs-ai-badge-right-{{ ai_gen_id }} {
-    background-color: {{ block.settings.right_badge_color }};
-    color: #ffffff;
-  }
-
-  .ai-real-vs-ai-caption-{{ ai_gen_id }} {
-    font-size: {{ block.settings.desktop_caption_size }}px;
+    margin: 0 0 16px;
     color: {{ block.settings.text_color }};
-    text-align: center;
-    line-height: 1.5;
   }
 
-  .ai-real-vs-ai-divider-{{ ai_gen_id }} {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    font-weight: 700;
+  .ai-honest-pricing-card-description-{{ ai_gen_id }} {
+    font-size: {{ block.settings.desktop_card_body_size }}px;
     color: {{ block.settings.text_color }};
-    opacity: 0.6;
-    padding: 0 12px;
+    opacity: 0.85;
+    line-height: 1.6;
+    margin: 0;
   }
 
-  .ai-real-vs-ai-vs-badge-{{ ai_gen_id }} {
-    background-color: {{ block.settings.text_color }};
-    color: {{ block.settings.section_bg_color }};
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .ai-honest-pricing-example-{{ ai_gen_id }} {
+    margin-top: 20px;
+    padding: 16px;
+    background-color: rgba(0, 0, 0, 0.03);
+    border-radius: 8px;
+  }
+
+  .ai-honest-pricing-price-{{ ai_gen_id }} {
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .ai-honest-pricing-strike-{{ ai_gen_id }} {
+    text-decoration: line-through;
+    opacity: 0.6;
+    margin-right: 8px;
+  }
+
+  .ai-honest-pricing-trust-{{ ai_gen_id }} {
+    text-align: center;
+    font-size: 16px;
+    color: {{ block.settings.text_color }};
+    opacity: 0.9;
+    font-weight: 500;
   }
 
   @media screen and (max-width: 749px) {
-    .ai-real-vs-ai-heading-{{ ai_gen_id }} {
+    .ai-honest-pricing-heading-{{ ai_gen_id }} {
       font-size: {{ block.settings.mobile_heading_size }}px;
     }
 
-    .ai-real-vs-ai-caption-{{ ai_gen_id }} {
-      font-size: {{ block.settings.mobile_caption_size }}px;
+    .ai-honest-pricing-card-description-{{ ai_gen_id }} {
+      font-size: {{ block.settings.mobile_card_body_size }}px;
     }
 
-    .ai-real-vs-ai-comparison-{{ ai_gen_id }} {
+    .ai-honest-pricing-cards-{{ ai_gen_id }} {
       grid-template-columns: 1fr;
-      gap: 32px;
-    }
-
-    .ai-real-vs-ai-divider-{{ ai_gen_id }} {
-      order: 2;
-    }
-
-    .ai-real-vs-ai-card-{{ ai_gen_id }}:first-child {
-      order: 1;
-    }
-
-    .ai-real-vs-ai-card-{{ ai_gen_id }}:last-child {
-      order: 3;
+      gap: 24px;
     }
   }
 {% endstyle %}
 
 {% if block.settings.show_section %}
-  <ai-real-vs-ai-{{ ai_gen_id }} class="ai-real-vs-ai-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
-    <div class="ai-real-vs-ai-container-{{ ai_gen_id }}">
-      <div class="ai-real-vs-ai-header-{{ ai_gen_id }}">
+  <ai-honest-pricing-{{ ai_gen_id }} class="ai-honest-pricing-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+    <div class="ai-honest-pricing-container-{{ ai_gen_id }}">
+      <div class="ai-honest-pricing-header-{{ ai_gen_id }}">
         {% if block.settings.heading != blank %}
-          <h2 class="ai-real-vs-ai-heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
+          <h2 class="ai-honest-pricing-heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
         {% endif %}
         {% if block.settings.subheading != blank %}
-          <p class="ai-real-vs-ai-subheading-{{ ai_gen_id }}">{{ block.settings.subheading }}</p>
+          <p class="ai-honest-pricing-subheading-{{ ai_gen_id }}">{{ block.settings.subheading }}</p>
         {% endif %}
       </div>
 
-      <div class="ai-real-vs-ai-comparison-{{ ai_gen_id }}">
-        <div class="ai-real-vs-ai-card-{{ ai_gen_id }}">
-          <div class="ai-real-vs-ai-image-wrapper-{{ ai_gen_id }}">
-            {% if block.settings.left_image %}
-              <img
-                src="{{ block.settings.left_image | image_url: width: 800 }}"
-                alt="{{ block.settings.left_image.alt | escape }}"
-                loading="lazy"
-                width="800"
-                height="800"
-              >
-            {% else %}
-              <div class="ai-real-vs-ai-placeholder-{{ ai_gen_id }}">
-                {{ 'product-1' | placeholder_svg_tag }}
+      {% if block.settings.show_cards %}
+        <div class="ai-honest-pricing-cards-{{ ai_gen_id }}">
+          <div class="ai-honest-pricing-card-{{ ai_gen_id }} ai-honest-pricing-card-left-{{ ai_gen_id }}">
+            {% if block.settings.card_1_title != blank %}
+              <h3 class="ai-honest-pricing-card-title-{{ ai_gen_id }}">{{ block.settings.card_1_title }}</h3>
+            {% endif %}
+            {% if block.settings.card_1_description != blank %}
+              <div class="ai-honest-pricing-card-description-{{ ai_gen_id }}">
+                {{ block.settings.card_1_description }}
               </div>
             {% endif %}
-            <div class="ai-real-vs-ai-badge-{{ ai_gen_id }} ai-real-vs-ai-badge-left-{{ ai_gen_id }}">
-              {{ block.settings.left_badge_text }}
+            <div class="ai-honest-pricing-example-{{ ai_gen_id }}">
+              <div class="ai-honest-pricing-price-{{ ai_gen_id }}">
+                <span class="ai-honest-pricing-strike-{{ ai_gen_id }}">₹4,000</span>
+                <span style="color: {{ block.settings.card_1_accent }};">₹2,000 (50% off)</span>
+              </div>
+              <div style="font-size: 13px; opacity: 0.7;">Inflated MRP to fake a discount</div>
             </div>
           </div>
-          {% if block.settings.left_caption != blank %}
-            <div class="ai-real-vs-ai-caption-{{ ai_gen_id }}">
-              {{ block.settings.left_caption }}
-            </div>
-          {% endif %}
-        </div>
 
-        {% if block.settings.show_vs_badge %}
-          <div class="ai-real-vs-ai-divider-{{ ai_gen_id }}">
-            <div class="ai-real-vs-ai-vs-badge-{{ ai_gen_id }}">VS</div>
-          </div>
-        {% else %}
-          <div class="ai-real-vs-ai-divider-{{ ai_gen_id }}">
-            ⟷
-          </div>
-        {% endif %}
-
-        <div class="ai-real-vs-ai-card-{{ ai_gen_id }}">
-          <div class="ai-real-vs-ai-image-wrapper-{{ ai_gen_id }}">
-            {% if block.settings.right_image %}
-              <img
-                src="{{ block.settings.right_image | image_url: width: 800 }}"
-                alt="{{ block.settings.right_image.alt | escape }}"
-                loading="lazy"
-                width="800"
-                height="800"
-              >
-            {% else %}
-              <div class="ai-real-vs-ai-placeholder-{{ ai_gen_id }}">
-                {{ 'product-1' | placeholder_svg_tag }}
+          <div class="ai-honest-pricing-card-{{ ai_gen_id }} ai-honest-pricing-card-right-{{ ai_gen_id }}">
+            {% if block.settings.card_2_title != blank %}
+              <h3 class="ai-honest-pricing-card-title-{{ ai_gen_id }}">{{ block.settings.card_2_title }}</h3>
+            {% endif %}
+            {% if block.settings.card_2_description != blank %}
+              <div class="ai-honest-pricing-card-description-{{ ai_gen_id }}">
+                {{ block.settings.card_2_description }}
               </div>
             {% endif %}
-            <div class="ai-real-vs-ai-badge-{{ ai_gen_id }} ai-real-vs-ai-badge-right-{{ ai_gen_id }}">
-              {{ block.settings.right_badge_text }}
+            <div class="ai-honest-pricing-example-{{ ai_gen_id }}">
+              <div class="ai-honest-pricing-price-{{ ai_gen_id }}">
+                <span class="ai-honest-pricing-strike-{{ ai_gen_id }}">₹2,200</span>
+                <span style="color: {{ block.settings.card_2_accent }};">₹2,000 (10% off)</span>
+              </div>
+              <div style="font-size: 13px; opacity: 0.7;">Real price, real discount</div>
             </div>
           </div>
-          {% if block.settings.right_caption != blank %}
-            <div class="ai-real-vs-ai-caption-{{ ai_gen_id }}">
-              {{ block.settings.right_caption }}
-            </div>
-          {% endif %}
         </div>
-      </div>
+      {% endif %}
+
+      {% if block.settings.trust_statement != blank %}
+        <div class="ai-honest-pricing-trust-{{ ai_gen_id }}">
+          {{ block.settings.trust_statement }}
+        </div>
+      {% endif %}
     </div>
-  </ai-real-vs-ai-{{ ai_gen_id }}>
+  </ai-honest-pricing-{{ ai_gen_id }}>
 {% endif %}
 
 {% schema %}
 {
-  "name": "Real vs AI photos",
+  "name": "Honest pricing",
   "tag": null,
   "settings": [
     {
@@ -381,77 +329,73 @@
       "type": "inline_richtext",
       "id": "heading",
       "label": "Heading",
-      "default": "What You See Is What You Get"
+      "default": "No Drama. No Fake Discounts."
     },
     {
       "type": "inline_richtext",
       "id": "subheading",
       "label": "Subheading",
-      "default": "Unlike others, we never use AI-generated images. Every photo is our actual product."
-    },
-    {
-      "type": "header",
-      "content": "Left card"
-    },
-    {
-      "type": "image_picker",
-      "id": "left_image",
-      "label": "Image"
-    },
-    {
-      "type": "text",
-      "id": "left_badge_text",
-      "label": "Badge text",
-      "default": "AI Generated"
-    },
-    {
-      "type": "color",
-      "id": "left_badge_color",
-      "label": "Badge color",
-      "default": "#e32402"
-    },
-    {
-      "type": "textarea",
-      "id": "left_caption",
-      "label": "Caption",
-      "default": "Artificially created image — not the real product"
-    },
-    {
-      "type": "header",
-      "content": "Right card"
-    },
-    {
-      "type": "image_picker",
-      "id": "right_image",
-      "label": "Image"
-    },
-    {
-      "type": "text",
-      "id": "right_badge_text",
-      "label": "Badge text",
-      "default": "Actual Product"
-    },
-    {
-      "type": "color",
-      "id": "right_badge_color",
-      "label": "Badge color",
-      "default": "#008060"
-    },
-    {
-      "type": "textarea",
-      "id": "right_caption",
-      "label": "Caption",
-      "default": "Real photo of the exact product you'll receive"
-    },
-    {
-      "type": "header",
-      "content": "Divider"
+      "default": "The price you see is honest. Always."
     },
     {
       "type": "checkbox",
-      "id": "show_vs_badge",
-      "label": "Show VS badge",
+      "id": "show_cards",
+      "label": "Show comparison cards",
       "default": true
+    },
+    {
+      "type": "header",
+      "content": "Card 1"
+    },
+    {
+      "type": "text",
+      "id": "card_1_title",
+      "label": "Title",
+      "default": "How others do it"
+    },
+    {
+      "type": "richtext",
+      "id": "card_1_description",
+      "label": "Description",
+      "default": "<p>They inflate the MRP to ₹4,000, then show a fake 50% discount to make you think you're getting a deal.</p>"
+    },
+    {
+      "type": "color",
+      "id": "card_1_accent",
+      "label": "Accent color",
+      "default": "#e32402"
+    },
+    {
+      "type": "header",
+      "content": "Card 2"
+    },
+    {
+      "type": "text",
+      "id": "card_2_title",
+      "label": "Title",
+      "default": "How AdHouse does it"
+    },
+    {
+      "type": "richtext",
+      "id": "card_2_description",
+      "label": "Description",
+      "default": "<p>We set a fair MRP of ₹2,200 and offer a genuine 10% discount. No tricks, just honest pricing.</p>"
+    },
+    {
+      "type": "color",
+      "id": "card_2_accent",
+      "label": "Accent color",
+      "default": "#008060"
+    },
+    {
+      "type": "header",
+      "content": "Trust statement"
+    },
+    {
+      "type": "richtext",
+      "id": "trust_statement",
+      "label": "Text",
+      "default": "<p>✓ Every discount is real. Every price is fair. That's the AdHouse promise.</p>"
     },
     {
       "type": "header",
@@ -485,23 +429,23 @@
     },
     {
       "type": "range",
-      "id": "desktop_caption_size",
-      "label": "Desktop caption size",
-      "min": 12,
+      "id": "desktop_card_body_size",
+      "label": "Desktop card body size",
+      "min": 13,
       "max": 16,
       "step": 1,
       "unit": "px",
-      "default": 14
+      "default": 15
     },
     {
       "type": "range",
-      "id": "mobile_caption_size",
-      "label": "Mobile caption size",
-      "min": 11,
-      "max": 14,
+      "id": "mobile_card_body_size",
+      "label": "Mobile card body size",
+      "min": 12,
+      "max": 15,
       "step": 1,
       "unit": "px",
-      "default": 13
+      "default": 14
     },
     {
       "type": "header",
@@ -511,7 +455,7 @@
       "type": "color",
       "id": "section_bg_color",
       "label": "Background",
-      "default": "#fcfbfa"
+      "default": "#f7f7f7"
     },
     {
       "type": "color",
@@ -538,7 +482,7 @@
   ],
   "presets": [
     {
-      "name": "Real vs AI photos"
+      "name": "Honest pricing"
     }
   ]
 }
