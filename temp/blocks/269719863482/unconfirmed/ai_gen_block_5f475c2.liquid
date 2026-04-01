@@ -126,170 +126,185 @@
 {% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
 
 {% style %}
-  .ai-quality-design-{{ ai_gen_id }} {
+  .ai-anti-tarnish-{{ ai_gen_id }} {
     display: block;
     width: 100%;
     padding: 40px 20px;
     background-color: {{ block.settings.section_bg_color }};
   }
 
-  .ai-quality-design-container-{{ ai_gen_id }} {
+  .ai-anti-tarnish-container-{{ ai_gen_id }} {
     max-width: 1200px;
     margin: 0 auto;
   }
 
-  .ai-quality-design-header-{{ ai_gen_id }} {
-    text-align: center;
-    margin-bottom: 48px;
+  .ai-anti-tarnish-content-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
   }
 
-  .ai-quality-design-heading-{{ ai_gen_id }} {
+  .ai-anti-tarnish-text-{{ ai_gen_id }} {
+    padding-right: 20px;
+  }
+
+  .ai-anti-tarnish-heading-{{ ai_gen_id }} {
     font-size: {{ block.settings.desktop_heading_size }}px;
     color: {{ block.settings.text_color }};
-    margin: 0 0 12px;
+    margin: 0 0 16px;
     font-weight: 600;
     font-family: {{ block.settings.heading_font.family }}, {{ block.settings.heading_font.fallback_families }};
   }
 
-  .ai-quality-design-subheading-{{ ai_gen_id }} {
-    font-size: 16px;
+  .ai-anti-tarnish-subheading-{{ ai_gen_id }} {
+    font-size: 18px;
     color: {{ block.settings.text_color }};
     opacity: 0.8;
-    margin: 0;
+    margin: 0 0 12px;
+    font-weight: 500;
   }
 
-  .ai-quality-design-grid-{{ ai_gen_id }} {
-    display: grid;
-    grid-template-columns: repeat({{ block.settings.desktop_columns }}, 1fr);
-    gap: 32px;
+  .ai-anti-tarnish-paragraph-{{ ai_gen_id }} {
+    font-size: {{ block.settings.desktop_paragraph_size }}px;
+    color: {{ block.settings.text_color }};
+    opacity: 0.85;
+    line-height: 1.6;
+    margin: 0 0 24px;
   }
 
-  .ai-quality-design-item-{{ ai_gen_id }} {
-    text-align: center;
-    padding: 24px;
-    background-color: {{ block.settings.card_bg_color }};
-    border-radius: 16px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  .ai-anti-tarnish-badge-{{ ai_gen_id }} {
+    display: inline-block;
+    margin-top: 16px;
   }
 
-  .ai-quality-design-icon-wrapper-{{ ai_gen_id }} {
-    width: {{ block.settings.desktop_icon_size }}px;
-    height: {{ block.settings.desktop_icon_size }}px;
-    margin: 0 auto 16px;
+  .ai-anti-tarnish-badge-{{ ai_gen_id }} img {
+    max-width: 120px;
+    height: auto;
+  }
+
+  .ai-anti-tarnish-checklist-{{ ai_gen_id }} {
+    background-color: {{ block.settings.checklist_bg_color }};
+    border-radius: 18px;
+    padding: 32px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  .ai-anti-tarnish-checklist-title-{{ ai_gen_id }} {
+    font-size: 20px;
+    font-weight: 600;
+    color: {{ block.settings.text_color }};
+    margin: 0 0 24px;
+  }
+
+  .ai-anti-tarnish-checklist-items-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .ai-anti-tarnish-checklist-item-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: {{ block.settings.desktop_checklist_size }}px;
+    color: {{ block.settings.text_color }};
+  }
+
+  .ai-anti-tarnish-checkmark-{{ ai_gen_id }} {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: {{ block.settings.checkmark_color }};
+    color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
-    background-color: {{ block.settings.icon_accent_color }};
-    color: #ffffff;
-  }
-
-  .ai-quality-design-icon-wrapper-{{ ai_gen_id }} img {
-    width: 60%;
-    height: 60%;
-    object-fit: contain;
-  }
-
-  .ai-quality-design-icon-placeholder-{{ ai_gen_id }} {
-    font-size: calc({{ block.settings.desktop_icon_size }}px * 0.5);
-  }
-
-  .ai-quality-design-label-{{ ai_gen_id }} {
-    font-size: {{ block.settings.desktop_label_size }}px;
-    font-weight: 600;
-    color: {{ block.settings.label_color }};
-    margin: 0 0 8px;
-  }
-
-  .ai-quality-design-description-{{ ai_gen_id }} {
-    font-size: {{ block.settings.desktop_description_size }}px;
-    color: {{ block.settings.description_color }};
-    opacity: 0.85;
-    line-height: 1.5;
-    margin: 0;
+    font-size: 14px;
+    font-weight: 700;
   }
 
   @media screen and (max-width: 749px) {
-    .ai-quality-design-heading-{{ ai_gen_id }} {
+    .ai-anti-tarnish-heading-{{ ai_gen_id }} {
       font-size: {{ block.settings.mobile_heading_size }}px;
     }
 
-    .ai-quality-design-grid-{{ ai_gen_id }} {
-      grid-template-columns: repeat({{ block.settings.mobile_columns }}, 1fr);
-      gap: 20px;
+    .ai-anti-tarnish-paragraph-{{ ai_gen_id }} {
+      font-size: {{ block.settings.mobile_paragraph_size }}px;
     }
 
-    .ai-quality-design-icon-wrapper-{{ ai_gen_id }} {
-      width: {{ block.settings.mobile_icon_size }}px;
-      height: {{ block.settings.mobile_icon_size }}px;
+    .ai-anti-tarnish-checklist-item-{{ ai_gen_id }} {
+      font-size: {{ block.settings.mobile_checklist_size }}px;
     }
 
-    .ai-quality-design-icon-placeholder-{{ ai_gen_id }} {
-      font-size: calc({{ block.settings.mobile_icon_size }}px * 0.5);
+    .ai-anti-tarnish-content-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: 32px;
     }
 
-    .ai-quality-design-label-{{ ai_gen_id }} {
-      font-size: {{ block.settings.mobile_label_size }}px;
-    }
-
-    .ai-quality-design-description-{{ ai_gen_id }} {
-      font-size: {{ block.settings.mobile_description_size }}px;
+    .ai-anti-tarnish-text-{{ ai_gen_id }} {
+      padding-right: 0;
     }
   }
 {% endstyle %}
 
 {% if block.settings.show_section %}
-  <ai-quality-design-{{ ai_gen_id }} class="ai-quality-design-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
-    <div class="ai-quality-design-container-{{ ai_gen_id }}">
-      <div class="ai-quality-design-header-{{ ai_gen_id }}">
-        {% if block.settings.heading != blank %}
-          <h2 class="ai-quality-design-heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
-        {% endif %}
-        {% if block.settings.subheading != blank %}
-          <p class="ai-quality-design-subheading-{{ ai_gen_id }}">{{ block.settings.subheading }}</p>
-        {% endif %}
-      </div>
-
-      <div class="ai-quality-design-grid-{{ ai_gen_id }}">
-        {% for i in (1..6) %}
-          {% liquid
-            assign show_key = 'item_' | append: i | append: '_show'
-            assign icon_key = 'item_' | append: i | append: '_icon'
-            assign label_key = 'item_' | append: i | append: '_label'
-            assign description_key = 'item_' | append: i | append: '_description'
-
-            assign show_item = block.settings[show_key]
-            assign icon = block.settings[icon_key]
-            assign label = block.settings[label_key]
-            assign description = block.settings[description_key]
-          %}
-
-          {% if show_item %}
-            <div class="ai-quality-design-item-{{ ai_gen_id }}">
-              <div class="ai-quality-design-icon-wrapper-{{ ai_gen_id }}">
-                {% if icon %}
-                  <img src="{{ icon | image_url: width: 100 }}" alt="{{ label | escape }}" loading="lazy">
-                {% else %}
-                  <span class="ai-quality-design-icon-placeholder-{{ ai_gen_id }}">✦</span>
-                {% endif %}
-              </div>
-              {% if label != blank %}
-                <h3 class="ai-quality-design-label-{{ ai_gen_id }}">{{ label }}</h3>
-              {% endif %}
-              {% if description != blank %}
-                <p class="ai-quality-design-description-{{ ai_gen_id }}">{{ description }}</p>
-              {% endif %}
+  <ai-anti-tarnish-{{ ai_gen_id }} class="ai-anti-tarnish-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+    <div class="ai-anti-tarnish-container-{{ ai_gen_id }}">
+      <div class="ai-anti-tarnish-content-{{ ai_gen_id }}">
+        <div class="ai-anti-tarnish-text-{{ ai_gen_id }}">
+          {% if block.settings.heading != blank %}
+            <h2 class="ai-anti-tarnish-heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
+          {% endif %}
+          {% if block.settings.subheading != blank %}
+            <div class="ai-anti-tarnish-subheading-{{ ai_gen_id }}">{{ block.settings.subheading }}</div>
+          {% endif %}
+          {% if block.settings.paragraph != blank %}
+            <div class="ai-anti-tarnish-paragraph-{{ ai_gen_id }}">{{ block.settings.paragraph }}</div>
+          {% endif %}
+          {% if block.settings.badge_image %}
+            <div class="ai-anti-tarnish-badge-{{ ai_gen_id }}">
+              <img
+                src="{{ block.settings.badge_image | image_url: width: 240 }}"
+                alt="{{ block.settings.badge_image.alt | escape }}"
+                loading="lazy"
+              >
             </div>
           {% endif %}
-        {% endfor %}
+        </div>
+
+        <div class="ai-anti-tarnish-checklist-{{ ai_gen_id }}">
+          {% if block.settings.checklist_title != blank %}
+            <h3 class="ai-anti-tarnish-checklist-title-{{ ai_gen_id }}">{{ block.settings.checklist_title }}</h3>
+          {% endif %}
+          <div class="ai-anti-tarnish-checklist-items-{{ ai_gen_id }}">
+            {% for i in (1..8) %}
+              {% liquid
+                assign show_key = 'item_' | append: i | append: '_show'
+                assign text_key = 'item_' | append: i | append: '_text'
+
+                assign show_item = block.settings[show_key]
+                assign item_text = block.settings[text_key]
+              %}
+
+              {% if show_item and item_text != blank %}
+                <div class="ai-anti-tarnish-checklist-item-{{ ai_gen_id }}">
+                  <div class="ai-anti-tarnish-checkmark-{{ ai_gen_id }}">✓</div>
+                  <span>{{ item_text }}</span>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
       </div>
     </div>
-  </ai-quality-design-{{ ai_gen_id }}>
+  </ai-anti-tarnish-{{ ai_gen_id }}>
 {% endif %}
 
 {% schema %}
 {
-  "name": "Quality and design",
+  "name": "Anti-tarnish tested",
   "tag": null,
   "settings": [
     {
@@ -306,42 +321,38 @@
       "type": "inline_richtext",
       "id": "heading",
       "label": "Heading",
-      "default": "Top-Notch Quality & Design"
+      "default": "Built to Last. Tested to Prove It."
     },
     {
       "type": "inline_richtext",
       "id": "subheading",
       "label": "Subheading",
-      "default": "Every piece is handpicked, premium quality, and designed with care"
+      "default": "Every piece is rigorously tested for quality and durability"
+    },
+    {
+      "type": "richtext",
+      "id": "paragraph",
+      "label": "Paragraph",
+      "default": "<p>We don't just claim quality — we test for it. Each piece undergoes strict quality checks to ensure it meets our high standards for durability, safety, and beauty.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "badge_image",
+      "label": "Badge or seal image"
     },
     {
       "type": "header",
-      "content": "Layout"
+      "content": "Checklist"
     },
     {
-      "type": "select",
-      "id": "desktop_columns",
-      "label": "Desktop columns",
-      "options": [
-        { "value": "2", "label": "2" },
-        { "value": "3", "label": "3" },
-        { "value": "4", "label": "4" }
-      ],
-      "default": "3"
-    },
-    {
-      "type": "select",
-      "id": "mobile_columns",
-      "label": "Mobile columns",
-      "options": [
-        { "value": "1", "label": "1" },
-        { "value": "2", "label": "2" }
-      ],
-      "default": "2"
+      "type": "text",
+      "id": "checklist_title",
+      "label": "Checklist title",
+      "default": "Tested Properties"
     },
     {
       "type": "header",
-      "content": "Item 1"
+      "content": "Checklist item 1"
     },
     {
       "type": "checkbox",
@@ -350,25 +361,14 @@
       "default": true
     },
     {
-      "type": "image_picker",
-      "id": "item_1_icon",
-      "label": "Icon"
-    },
-    {
       "type": "text",
-      "id": "item_1_label",
-      "label": "Label",
-      "default": "Handpicked Designs"
-    },
-    {
-      "type": "textarea",
-      "id": "item_1_description",
-      "label": "Description",
-      "default": "Every piece is personally curated, not bulk-sourced"
+      "id": "item_1_text",
+      "label": "Text",
+      "default": "Anti-tarnish tested"
     },
     {
       "type": "header",
-      "content": "Item 2"
+      "content": "Checklist item 2"
     },
     {
       "type": "checkbox",
@@ -377,25 +377,14 @@
       "default": true
     },
     {
-      "type": "image_picker",
-      "id": "item_2_icon",
-      "label": "Icon"
-    },
-    {
       "type": "text",
-      "id": "item_2_label",
-      "label": "Label",
-      "default": "Premium Finish"
-    },
-    {
-      "type": "textarea",
-      "id": "item_2_description",
-      "label": "Description",
-      "default": "Smooth edges, rich plating, flawless look"
+      "id": "item_2_text",
+      "label": "Text",
+      "default": "Sweat and water resistant"
     },
     {
       "type": "header",
-      "content": "Item 3"
+      "content": "Checklist item 3"
     },
     {
       "type": "checkbox",
@@ -404,25 +393,14 @@
       "default": true
     },
     {
-      "type": "image_picker",
-      "id": "item_3_icon",
-      "label": "Icon"
-    },
-    {
       "type": "text",
-      "id": "item_3_label",
-      "label": "Label",
-      "default": "Occasion Ready"
-    },
-    {
-      "type": "textarea",
-      "id": "item_3_description",
-      "label": "Description",
-      "default": "From festivals to everyday wear"
+      "id": "item_3_text",
+      "label": "Text",
+      "default": "Long-lasting gold/silver plating"
     },
     {
       "type": "header",
-      "content": "Item 4"
+      "content": "Checklist item 4"
     },
     {
       "type": "checkbox",
@@ -431,50 +409,30 @@
       "default": true
     },
     {
-      "type": "image_picker",
-      "id": "item_4_icon",
-      "label": "Icon"
-    },
-    {
       "type": "text",
-      "id": "item_4_label",
-      "label": "Label",
-      "default": "Attention to Detail"
-    },
-    {
-      "type": "textarea",
-      "id": "item_4_description",
-      "label": "Description",
-      "default": "Crafted to look expensive, priced to be accessible"
+      "id": "item_4_text",
+      "label": "Text",
+      "default": "Skin-safe and nickel-free"
     },
     {
       "type": "header",
-      "content": "Item 5"
+      "content": "Checklist item 5"
     },
     {
       "type": "checkbox",
       "id": "item_5_show",
       "label": "Show item",
-      "default": false
-    },
-    {
-      "type": "image_picker",
-      "id": "item_5_icon",
-      "label": "Icon"
+      "default": true
     },
     {
       "type": "text",
-      "id": "item_5_label",
-      "label": "Label"
-    },
-    {
-      "type": "textarea",
-      "id": "item_5_description",
-      "label": "Description"
+      "id": "item_5_text",
+      "label": "Text",
+      "default": "Stress-tested for clasps and settings"
     },
     {
       "type": "header",
-      "content": "Item 6"
+      "content": "Checklist item 6"
     },
     {
       "type": "checkbox",
@@ -483,19 +441,39 @@
       "default": false
     },
     {
-      "type": "image_picker",
-      "id": "item_6_icon",
-      "label": "Icon"
+      "type": "text",
+      "id": "item_6_text",
+      "label": "Text"
+    },
+    {
+      "type": "header",
+      "content": "Checklist item 7"
+    },
+    {
+      "type": "checkbox",
+      "id": "item_7_show",
+      "label": "Show item",
+      "default": false
     },
     {
       "type": "text",
-      "id": "item_6_label",
-      "label": "Label"
+      "id": "item_7_text",
+      "label": "Text"
     },
     {
-      "type": "textarea",
-      "id": "item_6_description",
-      "label": "Description"
+      "type": "header",
+      "content": "Checklist item 8"
+    },
+    {
+      "type": "checkbox",
+      "id": "item_8_show",
+      "label": "Show item",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "item_8_text",
+      "label": "Text"
     },
     {
       "type": "header",
@@ -529,18 +507,8 @@
     },
     {
       "type": "range",
-      "id": "desktop_label_size",
-      "label": "Desktop label size",
-      "min": 14,
-      "max": 18,
-      "step": 1,
-      "unit": "px",
-      "default": 16
-    },
-    {
-      "type": "range",
-      "id": "mobile_label_size",
-      "label": "Mobile label size",
+      "id": "desktop_paragraph_size",
+      "label": "Desktop paragraph size",
       "min": 13,
       "max": 16,
       "step": 1,
@@ -549,8 +517,8 @@
     },
     {
       "type": "range",
-      "id": "desktop_description_size",
-      "label": "Desktop description size",
+      "id": "mobile_paragraph_size",
+      "label": "Mobile paragraph size",
       "min": 12,
       "max": 15,
       "step": 1,
@@ -559,33 +527,23 @@
     },
     {
       "type": "range",
-      "id": "mobile_description_size",
-      "label": "Mobile description size",
-      "min": 11,
-      "max": 14,
+      "id": "desktop_checklist_size",
+      "label": "Desktop checklist size",
+      "min": 13,
+      "max": 16,
       "step": 1,
       "unit": "px",
-      "default": 13
+      "default": 15
     },
     {
       "type": "range",
-      "id": "desktop_icon_size",
-      "label": "Desktop icon size",
-      "min": 32,
-      "max": 64,
-      "step": 4,
+      "id": "mobile_checklist_size",
+      "label": "Mobile checklist size",
+      "min": 12,
+      "max": 15,
+      "step": 1,
       "unit": "px",
-      "default": 48
-    },
-    {
-      "type": "range",
-      "id": "mobile_icon_size",
-      "label": "Mobile icon size",
-      "min": 24,
-      "max": 48,
-      "step": 4,
-      "unit": "px",
-      "default": 40
+      "default": 14
     },
     {
       "type": "header",
@@ -595,12 +553,12 @@
       "type": "color",
       "id": "section_bg_color",
       "label": "Background",
-      "default": "#fcfbfa"
+      "default": "#f7f7f7"
     },
     {
       "type": "color",
-      "id": "card_bg_color",
-      "label": "Card background",
+      "id": "checklist_bg_color",
+      "label": "Checklist background",
       "default": "#ffffff"
     },
     {
@@ -611,21 +569,9 @@
     },
     {
       "type": "color",
-      "id": "icon_accent_color",
-      "label": "Icon accent",
-      "default": "#a46959"
-    },
-    {
-      "type": "color",
-      "id": "label_color",
-      "label": "Label",
-      "default": "#422a24"
-    },
-    {
-      "type": "color",
-      "id": "description_color",
-      "label": "Description",
-      "default": "#422a24"
+      "id": "checkmark_color",
+      "label": "Checkmark",
+      "default": "#008060"
     },
     {
       "type": "range",
@@ -640,7 +586,7 @@
   ],
   "presets": [
     {
-      "name": "Quality and design"
+      "name": "Anti-tarnish tested"
     }
   ]
 }
