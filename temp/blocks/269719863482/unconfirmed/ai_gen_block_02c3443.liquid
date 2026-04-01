@@ -126,213 +126,195 @@
 {% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
 
 {% style %}
-  .ai-returns-{{ ai_gen_id }} {
+  .ai-support-{{ ai_gen_id }} {
     display: block;
     width: 100%;
     padding: 40px 20px;
     background-color: {{ block.settings.section_bg_color }};
   }
 
-  .ai-returns-container-{{ ai_gen_id }} {
+  .ai-support-container-{{ ai_gen_id }} {
     max-width: 1200px;
     margin: 0 auto;
   }
 
-  .ai-returns-content-{{ ai_gen_id }} {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 48px;
-    align-items: center;
+  .ai-support-header-{{ ai_gen_id }} {
+    text-align: center;
+    margin-bottom: 40px;
   }
 
-  .ai-returns-text-{{ ai_gen_id }} {
-    padding-right: 20px;
-  }
-
-  .ai-returns-heading-{{ ai_gen_id }} {
+  .ai-support-heading-{{ ai_gen_id }} {
     font-size: {{ block.settings.desktop_heading_size }}px;
     color: {{ block.settings.text_color }};
-    margin: 0 0 16px;
+    margin: 0 0 12px;
     font-weight: 600;
     font-family: {{ block.settings.heading_font.family }}, {{ block.settings.heading_font.fallback_families }};
   }
 
-  .ai-returns-subheading-{{ ai_gen_id }} {
-    font-size: 18px;
+  .ai-support-subheading-{{ ai_gen_id }} {
+    font-size: 16px;
     color: {{ block.settings.text_color }};
     opacity: 0.8;
-    margin: 0 0 24px;
-    font-weight: 500;
+    margin: 0;
   }
 
-  .ai-returns-description-{{ ai_gen_id }} {
+  .ai-support-channels-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat({{ block.settings.desktop_columns }}, 1fr);
+    gap: 24px;
+  }
+
+  .ai-support-channel-{{ ai_gen_id }} {
+    background-color: {{ block.settings.card_bg_color }};
+    border-radius: 16px;
+    padding: 28px 24px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .ai-support-channel-{{ ai_gen_id }}:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  .ai-support-channel-icon-{{ ai_gen_id }} {
+    width: {{ block.settings.desktop_icon_size }}px;
+    height: {{ block.settings.desktop_icon_size }}px;
+    margin: 0 auto 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: {{ block.settings.icon_bg_color }};
+    color: {{ block.settings.icon_color }};
+    font-size: calc({{ block.settings.desktop_icon_size }}px * 0.5);
+  }
+
+  .ai-support-channel-icon-{{ ai_gen_id }} img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+  }
+
+  .ai-support-channel-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.desktop_title_size }}px;
+    font-weight: 600;
+    color: {{ block.settings.text_color }};
+    margin: 0 0 8px;
+  }
+
+  .ai-support-channel-description-{{ ai_gen_id }} {
     font-size: {{ block.settings.desktop_description_size }}px;
     color: {{ block.settings.text_color }};
     opacity: 0.85;
-    line-height: 1.6;
-    margin: 0 0 24px;
+    margin: 0 0 16px;
+    line-height: 1.5;
   }
 
-  .ai-returns-cta-{{ ai_gen_id }} {
+  .ai-support-channel-link-{{ ai_gen_id }} {
     display: inline-block;
-    padding: 12px 24px;
+    padding: 10px 20px;
     background-color: {{ block.settings.button_bg_color }};
     color: {{ block.settings.button_text_color }};
     text-decoration: none;
     border-radius: 8px;
     font-weight: 600;
+    font-size: 14px;
     transition: background-color 0.3s ease;
   }
 
-  .ai-returns-cta-{{ ai_gen_id }}:hover {
+  .ai-support-channel-link-{{ ai_gen_id }}:hover {
     background-color: {{ block.settings.button_hover_color }};
   }
 
-  .ai-returns-steps-{{ ai_gen_id }} {
-    background-color: {{ block.settings.card_bg_color }};
-    border-radius: 18px;
-    padding: 32px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-  }
-
-  .ai-returns-steps-title-{{ ai_gen_id }} {
-    font-size: 20px;
-    font-weight: 600;
-    color: {{ block.settings.text_color }};
-    margin: 0 0 24px;
-  }
-
-  .ai-returns-step-{{ ai_gen_id }} {
-    display: flex;
-    gap: 16px;
-    margin-bottom: 20px;
-  }
-
-  .ai-returns-step-{{ ai_gen_id }}:last-child {
-    margin-bottom: 0;
-  }
-
-  .ai-returns-step-number-{{ ai_gen_id }} {
-    flex-shrink: 0;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background-color: {{ block.settings.accent_color }};
-    color: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 16px;
-  }
-
-  .ai-returns-step-content-{{ ai_gen_id }} {
-    flex-grow: 1;
-  }
-
-  .ai-returns-step-title-{{ ai_gen_id }} {
-    font-size: {{ block.settings.desktop_step_title_size }}px;
-    font-weight: 600;
-    color: {{ block.settings.text_color }};
-    margin: 0 0 4px;
-  }
-
-  .ai-returns-step-description-{{ ai_gen_id }} {
-    font-size: {{ block.settings.desktop_step_description_size }}px;
-    color: {{ block.settings.text_color }};
-    opacity: 0.85;
-    margin: 0;
-    line-height: 1.5;
-  }
-
   @media screen and (max-width: 749px) {
-    .ai-returns-heading-{{ ai_gen_id }} {
+    .ai-support-heading-{{ ai_gen_id }} {
       font-size: {{ block.settings.mobile_heading_size }}px;
     }
 
-    .ai-returns-description-{{ ai_gen_id }} {
+    .ai-support-channels-{{ ai_gen_id }} {
+      grid-template-columns: repeat({{ block.settings.mobile_columns }}, 1fr);
+      gap: 20px;
+    }
+
+    .ai-support-channel-icon-{{ ai_gen_id }} {
+      width: {{ block.settings.mobile_icon_size }}px;
+      height: {{ block.settings.mobile_icon_size }}px;
+      font-size: calc({{ block.settings.mobile_icon_size }}px * 0.5);
+    }
+
+    .ai-support-channel-title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.mobile_title_size }}px;
+    }
+
+    .ai-support-channel-description-{{ ai_gen_id }} {
       font-size: {{ block.settings.mobile_description_size }}px;
-    }
-
-    .ai-returns-step-title-{{ ai_gen_id }} {
-      font-size: {{ block.settings.mobile_step_title_size }}px;
-    }
-
-    .ai-returns-step-description-{{ ai_gen_id }} {
-      font-size: {{ block.settings.mobile_step_description_size }}px;
-    }
-
-    .ai-returns-content-{{ ai_gen_id }} {
-      grid-template-columns: 1fr;
-      gap: 32px;
-    }
-
-    .ai-returns-text-{{ ai_gen_id }} {
-      padding-right: 0;
     }
   }
 {% endstyle %}
 
 {% if block.settings.show_section %}
-  <ai-returns-{{ ai_gen_id }} class="ai-returns-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
-    <div class="ai-returns-container-{{ ai_gen_id }}">
-      <div class="ai-returns-content-{{ ai_gen_id }}">
-        <div class="ai-returns-text-{{ ai_gen_id }}">
-          {% if block.settings.heading != blank %}
-            <h2 class="ai-returns-heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
-          {% endif %}
-          {% if block.settings.subheading != blank %}
-            <div class="ai-returns-subheading-{{ ai_gen_id }}">{{ block.settings.subheading }}</div>
-          {% endif %}
-          {% if block.settings.description != blank %}
-            <div class="ai-returns-description-{{ ai_gen_id }}">{{ block.settings.description }}</div>
-          {% endif %}
-          {% if block.settings.cta_text != blank and block.settings.cta_link != blank %}
-            <a href="{{ block.settings.cta_link }}" class="ai-returns-cta-{{ ai_gen_id }}">
-              {{ block.settings.cta_text }}
-            </a>
-          {% endif %}
-        </div>
+  <ai-support-{{ ai_gen_id }} class="ai-support-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+    <div class="ai-support-container-{{ ai_gen_id }}">
+      <div class="ai-support-header-{{ ai_gen_id }}">
+        {% if block.settings.heading != blank %}
+          <h2 class="ai-support-heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
+        {% endif %}
+        {% if block.settings.subheading != blank %}
+          <p class="ai-support-subheading-{{ ai_gen_id }}">{{ block.settings.subheading }}</p>
+        {% endif %}
+      </div>
 
-        <div class="ai-returns-steps-{{ ai_gen_id }}">
-          {% if block.settings.steps_title != blank %}
-            <h3 class="ai-returns-steps-title-{{ ai_gen_id }}">{{ block.settings.steps_title }}</h3>
-          {% endif %}
+      <div class="ai-support-channels-{{ ai_gen_id }}">
+        {% for i in (1..4) %}
+          {% liquid
+            assign show_key = 'channel_' | append: i | append: '_show'
+            assign icon_key = 'channel_' | append: i | append: '_icon'
+            assign title_key = 'channel_' | append: i | append: '_title'
+            assign description_key = 'channel_' | append: i | append: '_description'
+            assign link_text_key = 'channel_' | append: i | append: '_link_text'
+            assign link_url_key = 'channel_' | append: i | append: '_link_url'
 
-          {% for i in (1..4) %}
-            {% liquid
-              assign show_key = 'step_' | append: i | append: '_show'
-              assign title_key = 'step_' | append: i | append: '_title'
-              assign description_key = 'step_' | append: i | append: '_description'
+            assign show_channel = block.settings[show_key]
+            assign icon = block.settings[icon_key]
+            assign title = block.settings[title_key]
+            assign description = block.settings[description_key]
+            assign link_text = block.settings[link_text_key]
+            assign link_url = block.settings[link_url_key]
+          %}
 
-              assign show_step = block.settings[show_key]
-              assign step_title = block.settings[title_key]
-              assign step_description = block.settings[description_key]
-            %}
-
-            {% if show_step %}
-              <div class="ai-returns-step-{{ ai_gen_id }}">
-                <div class="ai-returns-step-number-{{ ai_gen_id }}">{{ i }}</div>
-                <div class="ai-returns-step-content-{{ ai_gen_id }}">
-                  {% if step_title != blank %}
-                    <div class="ai-returns-step-title-{{ ai_gen_id }}">{{ step_title }}</div>
-                  {% endif %}
-                  {% if step_description != blank %}
-                    <div class="ai-returns-step-description-{{ ai_gen_id }}">{{ step_description }}</div>
-                  {% endif %}
-                </div>
+          {% if show_channel %}
+            <div class="ai-support-channel-{{ ai_gen_id }}">
+              <div class="ai-support-channel-icon-{{ ai_gen_id }}">
+                {% if icon %}
+                  <img src="{{ icon | image_url: width: 100 }}" alt="{{ title | escape }}" loading="lazy">
+                {% else %}
+                  <span>💬</span>
+                {% endif %}
               </div>
-            {% endif %}
-          {% endfor %}
-        </div>
+              {% if title != blank %}
+                <h3 class="ai-support-channel-title-{{ ai_gen_id }}">{{ title }}</h3>
+              {% endif %}
+              {% if description != blank %}
+                <p class="ai-support-channel-description-{{ ai_gen_id }}">{{ description }}</p>
+              {% endif %}
+              {% if link_text != blank and link_url != blank %}
+                <a href="{{ link_url }}" class="ai-support-channel-link-{{ ai_gen_id }}">
+                  {{ link_text }}
+                </a>
+              {% endif %}
+            </div>
+          {% endif %}
+        {% endfor %}
       </div>
     </div>
-  </ai-returns-{{ ai_gen_id }}>
+  </ai-support-{{ ai_gen_id }}>
 {% endif %}
 
 {% schema %}
 {
-  "name": "Returns and exchange",
+  "name": "Customer support",
   "tag": null,
   "settings": [
     {
@@ -349,128 +331,187 @@
       "type": "inline_richtext",
       "id": "heading",
       "label": "Heading",
-      "default": "Easy Returns & Exchange"
+      "default": "We're Here to Help"
     },
     {
       "type": "inline_richtext",
       "id": "subheading",
       "label": "Subheading",
-      "default": "Not happy? We'll make it right."
+      "default": "Reach out anytime — we respond fast"
     },
     {
-      "type": "richtext",
-      "id": "description",
-      "label": "Description",
-      "default": "<p>We offer hassle-free returns and exchanges within 7 days of delivery. Your satisfaction is our priority.</p>"
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "desktop_columns",
+      "label": "Desktop columns",
+      "options": [
+        { "value": "2", "label": "2" },
+        { "value": "3", "label": "3" },
+        { "value": "4", "label": "4" }
+      ],
+      "default": "3"
+    },
+    {
+      "type": "select",
+      "id": "mobile_columns",
+      "label": "Mobile columns",
+      "options": [
+        { "value": "1", "label": "1" },
+        { "value": "2", "label": "2" }
+      ],
+      "default": "1"
+    },
+    {
+      "type": "header",
+      "content": "Channel 1"
+    },
+    {
+      "type": "checkbox",
+      "id": "channel_1_show",
+      "label": "Show channel",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "channel_1_icon",
+      "label": "Icon"
     },
     {
       "type": "text",
-      "id": "cta_text",
-      "label": "Button text",
-      "default": "View Return Policy"
+      "id": "channel_1_title",
+      "label": "Title",
+      "default": "WhatsApp"
+    },
+    {
+      "type": "textarea",
+      "id": "channel_1_description",
+      "label": "Description",
+      "default": "Chat with us instantly"
+    },
+    {
+      "type": "text",
+      "id": "channel_1_link_text",
+      "label": "Link text",
+      "default": "Chat Now"
     },
     {
       "type": "url",
-      "id": "cta_link",
-      "label": "Button link"
+      "id": "channel_1_link_url",
+      "label": "Link URL"
     },
     {
       "type": "header",
-      "content": "Steps"
-    },
-    {
-      "type": "text",
-      "id": "steps_title",
-      "label": "Steps title",
-      "default": "How It Works"
-    },
-    {
-      "type": "header",
-      "content": "Step 1"
+      "content": "Channel 2"
     },
     {
       "type": "checkbox",
-      "id": "step_1_show",
-      "label": "Show step",
+      "id": "channel_2_show",
+      "label": "Show channel",
       "default": true
     },
     {
+      "type": "image_picker",
+      "id": "channel_2_icon",
+      "label": "Icon"
+    },
+    {
       "type": "text",
-      "id": "step_1_title",
+      "id": "channel_2_title",
       "label": "Title",
-      "default": "Contact Us"
+      "default": "Email"
     },
     {
       "type": "textarea",
-      "id": "step_1_description",
+      "id": "channel_2_description",
       "label": "Description",
-      "default": "Reach out via email or WhatsApp"
+      "default": "support@adhouse.in"
+    },
+    {
+      "type": "text",
+      "id": "channel_2_link_text",
+      "label": "Link text",
+      "default": "Send Email"
+    },
+    {
+      "type": "url",
+      "id": "channel_2_link_url",
+      "label": "Link URL"
     },
     {
       "type": "header",
-      "content": "Step 2"
+      "content": "Channel 3"
     },
     {
       "type": "checkbox",
-      "id": "step_2_show",
-      "label": "Show step",
+      "id": "channel_3_show",
+      "label": "Show channel",
       "default": true
     },
     {
+      "type": "image_picker",
+      "id": "channel_3_icon",
+      "label": "Icon"
+    },
+    {
       "type": "text",
-      "id": "step_2_title",
+      "id": "channel_3_title",
       "label": "Title",
-      "default": "Get Approval"
+      "default": "Phone"
     },
     {
       "type": "textarea",
-      "id": "step_2_description",
+      "id": "channel_3_description",
       "label": "Description",
-      "default": "We'll review and approve your request"
+      "default": "Mon-Sat, 10 AM - 6 PM"
+    },
+    {
+      "type": "text",
+      "id": "channel_3_link_text",
+      "label": "Link text",
+      "default": "Call Us"
+    },
+    {
+      "type": "url",
+      "id": "channel_3_link_url",
+      "label": "Link URL"
     },
     {
       "type": "header",
-      "content": "Step 3"
+      "content": "Channel 4"
     },
     {
       "type": "checkbox",
-      "id": "step_3_show",
-      "label": "Show step",
-      "default": true
+      "id": "channel_4_show",
+      "label": "Show channel",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "channel_4_icon",
+      "label": "Icon"
     },
     {
       "type": "text",
-      "id": "step_3_title",
-      "label": "Title",
-      "default": "Ship It Back"
+      "id": "channel_4_title",
+      "label": "Title"
     },
     {
       "type": "textarea",
-      "id": "step_3_description",
-      "label": "Description",
-      "default": "Send the product back in original packaging"
-    },
-    {
-      "type": "header",
-      "content": "Step 4"
-    },
-    {
-      "type": "checkbox",
-      "id": "step_4_show",
-      "label": "Show step",
-      "default": true
+      "id": "channel_4_description",
+      "label": "Description"
     },
     {
       "type": "text",
-      "id": "step_4_title",
-      "label": "Title",
-      "default": "Get Refund"
+      "id": "channel_4_link_text",
+      "label": "Link text"
     },
     {
-      "type": "textarea",
-      "id": "step_4_description",
-      "label": "Description",
-      "default": "Receive your refund within 5-7 business days"
+      "type": "url",
+      "id": "channel_4_link_url",
+      "label": "Link URL"
     },
     {
       "type": "header",
@@ -504,13 +545,33 @@
     },
     {
       "type": "range",
+      "id": "desktop_title_size",
+      "label": "Desktop title size",
+      "min": 16,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "mobile_title_size",
+      "label": "Mobile title size",
+      "min": 14,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
       "id": "desktop_description_size",
       "label": "Desktop description size",
       "min": 13,
       "max": 16,
       "step": 1,
       "unit": "px",
-      "default": 15
+      "default": 14
     },
     {
       "type": "range",
@@ -520,47 +581,27 @@
       "max": 15,
       "step": 1,
       "unit": "px",
-      "default": 14
-    },
-    {
-      "type": "range",
-      "id": "desktop_step_title_size",
-      "label": "Desktop step title size",
-      "min": 14,
-      "max": 18,
-      "step": 1,
-      "unit": "px",
-      "default": 16
-    },
-    {
-      "type": "range",
-      "id": "mobile_step_title_size",
-      "label": "Mobile step title size",
-      "min": 13,
-      "max": 16,
-      "step": 1,
-      "unit": "px",
-      "default": 15
-    },
-    {
-      "type": "range",
-      "id": "desktop_step_description_size",
-      "label": "Desktop step description size",
-      "min": 12,
-      "max": 15,
-      "step": 1,
-      "unit": "px",
-      "default": 14
-    },
-    {
-      "type": "range",
-      "id": "mobile_step_description_size",
-      "label": "Mobile step description size",
-      "min": 11,
-      "max": 14,
-      "step": 1,
-      "unit": "px",
       "default": 13
+    },
+    {
+      "type": "range",
+      "id": "desktop_icon_size",
+      "label": "Desktop icon size",
+      "min": 48,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "mobile_icon_size",
+      "label": "Mobile icon size",
+      "min": 40,
+      "max": 64,
+      "step": 4,
+      "unit": "px",
+      "default": 56
     },
     {
       "type": "header",
@@ -570,7 +611,7 @@
       "type": "color",
       "id": "section_bg_color",
       "label": "Background",
-      "default": "#fcfbfa"
+      "default": "#f7f7f7"
     },
     {
       "type": "color",
@@ -586,9 +627,15 @@
     },
     {
       "type": "color",
-      "id": "accent_color",
-      "label": "Accent",
+      "id": "icon_bg_color",
+      "label": "Icon background",
       "default": "#a46959"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Icon color",
+      "default": "#ffffff"
     },
     {
       "type": "color",
@@ -621,7 +668,7 @@
   ],
   "presets": [
     {
-      "name": "Returns and exchange"
+      "name": "Customer support"
     }
   ]
 }
