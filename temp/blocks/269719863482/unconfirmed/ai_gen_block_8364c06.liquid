@@ -1,6 +1,453 @@
+{% doc %}
+  @prompt
+    Create a warm and elegant Contact Us page for AdHouse.in, an online jewellery brand. The tone should be friendly yet sophisticated, reflecting the beauty and trust associated with jewellery shopping.
+    Hero/Welcome Section:
+    Add a welcoming headline such as "We'd Love to Hear From You ✨" with a subtext like "Whether you have a question about our jewellery, need help with your order, or just want to say hello — we're always here for you."
+    Contact Details Section:
+    Display the following contact information with icons in a clean card or grid layout:
+    
+    📞 Phone: +91-XXXXXXXXXX (replace with your number)
+    💬 WhatsApp: Chat with us on WhatsApp — "Tap to chat instantly!"
+    📧 Email: support@adhouse.in
+    🕐 Business Hours: Monday – Saturday, 10:00 AM – 7:00 PM IST
+    📍 Address: (Add your city/state or warehouse address if applicable)
+    
+    Social Media Links Section:
+    Add a heading like "Follow Us & Stay Inspired 💎" and include clickable icons for:
+    
+    Instagram – @adhouse.in
+    Facebook – AdHouse Jewellery
+    Pinterest – AdHouse.in
+    YouTube – AdHouse Official (if applicable)
+    
+    Contact Form Section:
+    Include a simple inquiry form with fields for: Name, Email, Phone Number, Order ID (optional), and Message — with a submit button labeled "Send Message 💌"
+    Trust/Reassurance Line at Bottom:
+    End with a short note like: "We typically respond within 24 hours. Your trust means everything to us — just like every piece of jewellery we craft."
+    Design Notes:
+    Use gold, ivory, or rose-gold tones to match a jewellery brand aesthetic. Keep the layout minimal, elegant, and mobile-friendly., Generate some hero section as well in top 
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-contact-hero-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ai-contact-hero-container-{{ ai_gen_id }} {
+    position: relative;
+    min-height: {{ block.settings.hero_height }}px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 20px;
+  }
+
+  .ai-contact-hero-image-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  .ai-contact-hero-placeholder-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, {{ block.settings.gradient_color_1 }} 0%, {{ block.settings.gradient_color_2 }} 100%);
+    z-index: 0;
+  }
+
+  .ai-contact-hero-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+  }
+
+  .ai-contact-hero-overlay-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: {{ block.settings.overlay_color }};
+    opacity: {{ block.settings.overlay_opacity | divided_by: 100.0 }};
+    z-index: 1;
+  }
+
+  .ai-contact-hero-content-{{ ai_gen_id }} {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .ai-contact-hero-eyebrow-{{ ai_gen_id }} {
+    font-size: {{ block.settings.eyebrow_size }}px;
+    color: {{ block.settings.eyebrow_color }};
+    margin: 0 0 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .ai-contact-hero-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.title_size }}px;
+    color: {{ block.settings.title_color }};
+    margin: 0 0 20px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .ai-contact-hero-subtitle-{{ ai_gen_id }} {
+    font-size: {{ block.settings.subtitle_size }}px;
+    color: {{ block.settings.subtitle_color }};
+    margin: 0 0 32px;
+    line-height: 1.6;
+    opacity: 0.95;
+  }
+
+  .ai-contact-hero-button-{{ ai_gen_id }} {
+    display: inline-block;
+    padding: 14px 32px;
+    background-color: {{ block.settings.cta_button_bg }};
+    color: {{ block.settings.cta_button_text }};
+    text-decoration: none;
+    border-radius: {{ block.settings.button_radius }}px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+
+  .ai-contact-hero-button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.cta_button_hover_bg }};
+    transform: translateY(-2px);
+  }
+
+  .ai-contact-hero-scroll-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    color: {{ block.settings.title_color }};
+    font-size: 24px;
+    opacity: 0.7;
+    cursor: pointer;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-contact-hero-container-{{ ai_gen_id }} {
+      min-height: calc({{ block.settings.hero_height }}px * 0.7);
+      padding: 40px 20px;
+    }
+
+    .ai-contact-hero-title-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.title_size }}px * 0.7);
+    }
+
+    .ai-contact-hero-subtitle-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.subtitle_size }}px * 0.9);
+    }
+
+    .ai-contact-hero-eyebrow-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.eyebrow_size }}px * 0.9);
+    }
+  }
+{% endstyle %}
+
+<contact-hero-{{ ai_gen_id }} class="ai-contact-hero-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-contact-hero-container-{{ ai_gen_id }}">
+    {% if block.settings.hero_image %}
+      <img
+        src="{{ block.settings.hero_image | image_url: width: 2000 }}"
+        alt="{{ block.settings.hero_image.alt | escape }}"
+        loading="lazy"
+        width="{{ block.settings.hero_image.width }}"
+        height="{{ block.settings.hero_image.height }}"
+        class="ai-contact-hero-image-{{ ai_gen_id }}"
+      >
+    {% else %}
+      <div class="ai-contact-hero-placeholder-{{ ai_gen_id }}">
+        {{ 'hero-apparel-1' | placeholder_svg_tag }}
+      </div>
+    {% endif %}
+
+    {% if block.settings.show_overlay %}
+      <div class="ai-contact-hero-overlay-{{ ai_gen_id }}"></div>
+    {% endif %}
+
+    <div class="ai-contact-hero-content-{{ ai_gen_id }}">
+      {% if block.settings.eyebrow_text != blank %}
+        <div class="ai-contact-hero-eyebrow-{{ ai_gen_id }}">{{ block.settings.eyebrow_text }}</div>
+      {% endif %}
+
+      {% if block.settings.hero_title != blank %}
+        <h1 class="ai-contact-hero-title-{{ ai_gen_id }}">{{ block.settings.hero_title }}</h1>
+      {% endif %}
+
+      {% if block.settings.hero_subtitle != blank %}
+        <div class="ai-contact-hero-subtitle-{{ ai_gen_id }}">{{ block.settings.hero_subtitle }}</div>
+      {% endif %}
+
+      {% if block.settings.show_button and block.settings.cta_button_label != blank %}
+        <a href="{{ block.settings.button_link }}" class="ai-contact-hero-button-{{ ai_gen_id }}">
+          {{ block.settings.cta_button_label }}
+        </a>
+      {% endif %}
+    </div>
+
+    {% if block.settings.show_scroll_indicator %}
+      <div class="ai-contact-hero-scroll-{{ ai_gen_id }}">↓</div>
+    {% endif %}
+  </div>
+</contact-hero-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class ContactHero{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        const scrollIndicator = this.querySelector('.ai-contact-hero-scroll-{{ ai_gen_id }}');
+        if (scrollIndicator) {
+          scrollIndicator.addEventListener('click', () => {
+            const nextSection = this.nextElementSibling;
+            if (nextSection) {
+              nextSection.scrollIntoView({ behavior: 'smooth' });
+            }
+          });
+        }
+      }
+    }
+
+    customElements.define('contact-hero-{{ ai_gen_id }}', ContactHero{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Contact hero",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero image"
+    },
+    {
+      "type": "range",
+      "id": "hero_height",
+      "min": 300,
+      "max": 800,
+      "step": 50,
+      "unit": "px",
+      "label": "Height",
+      "default": 500
+    },
+    {
+      "type": "header",
+      "content": "Overlay"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_overlay",
+      "label": "Show overlay",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Overlay color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "unit": "%",
+      "label": "Overlay opacity",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Gradient (when no image)"
+    },
+    {
+      "type": "color",
+      "id": "gradient_color_1",
+      "label": "Gradient start",
+      "default": "#a46959"
+    },
+    {
+      "type": "color",
+      "id": "gradient_color_2",
+      "label": "Gradient end",
+      "default": "#835447"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "eyebrow_text",
+      "label": "Eyebrow text",
+      "default": "Get in Touch"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "hero_title",
+      "label": "Title",
+      "default": "We'd Love to Hear From You ✨"
+    },
+    {
+      "type": "textarea",
+      "id": "hero_subtitle",
+      "label": "Subtitle",
+      "default": "Whether you have a question about our jewellery, need help with your order, or just want to say hello — we're always here for you."
+    },
+    {
+      "type": "header",
+      "content": "Call to action"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_button",
+      "label": "Show button",
+      "default": false
+    },
+    {
+      "type": "inline_richtext",
+      "id": "cta_button_label",
+      "label": "Button label",
+      "default": "Contact Us"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Scroll indicator"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_scroll_indicator",
+      "label": "Show scroll indicator",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_size",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Eyebrow size",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "min": 28,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "label": "Title size",
+      "default": 52
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size",
+      "min": 14,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "Subtitle size",
+      "default": 18
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "eyebrow_color",
+      "label": "Eyebrow",
+      "default": "#a46959"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "cta_button_bg",
+      "label": "Button background",
+      "default": "#a46959"
+    },
+    {
+      "type": "color",
+      "id": "cta_button_text",
+      "label": "Button text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "cta_button_hover_bg",
+      "label": "Button hover background",
+      "default": "#835447"
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "range",
+      "id": "button_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Button border radius",
+      "default": 8
+    }
+  ],
+  "presets": [
+    {
+      "name": "Contact hero"
+    }
+  ]
+}
 {% endschema %}
