@@ -126,193 +126,170 @@
 {% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
 
 {% style %}
-  .ai-honest-pricing-{{ ai_gen_id }} {
+  .ai-quality-design-{{ ai_gen_id }} {
     display: block;
     width: 100%;
     padding: 40px 20px;
     background-color: {{ block.settings.section_bg_color }};
   }
 
-  .ai-honest-pricing-container-{{ ai_gen_id }} {
+  .ai-quality-design-container-{{ ai_gen_id }} {
     max-width: 1200px;
     margin: 0 auto;
   }
 
-  .ai-honest-pricing-header-{{ ai_gen_id }} {
+  .ai-quality-design-header-{{ ai_gen_id }} {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 48px;
   }
 
-  .ai-honest-pricing-heading-{{ ai_gen_id }} {
+  .ai-quality-design-heading-{{ ai_gen_id }} {
     font-size: {{ block.settings.desktop_heading_size }}px;
     color: {{ block.settings.text_color }};
     margin: 0 0 12px;
-    font-weight: 700;
+    font-weight: 600;
     font-family: {{ block.settings.heading_font.family }}, {{ block.settings.heading_font.fallback_families }};
   }
 
-  .ai-honest-pricing-subheading-{{ ai_gen_id }} {
-    font-size: 18px;
+  .ai-quality-design-subheading-{{ ai_gen_id }} {
+    font-size: 16px;
     color: {{ block.settings.text_color }};
     opacity: 0.8;
     margin: 0;
   }
 
-  .ai-honest-pricing-cards-{{ ai_gen_id }} {
+  .ai-quality-design-grid-{{ ai_gen_id }} {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat({{ block.settings.desktop_columns }}, 1fr);
     gap: 32px;
-    margin-bottom: 32px;
   }
 
-  .ai-honest-pricing-card-{{ ai_gen_id }} {
+  .ai-quality-design-item-{{ ai_gen_id }} {
+    text-align: center;
+    padding: 24px;
     background-color: {{ block.settings.card_bg_color }};
-    border-radius: 18px;
-    padding: 32px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-    position: relative;
-    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   }
 
-  .ai-honest-pricing-card-{{ ai_gen_id }}::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
+  .ai-quality-design-icon-wrapper-{{ ai_gen_id }} {
+    width: {{ block.settings.desktop_icon_size }}px;
+    height: {{ block.settings.desktop_icon_size }}px;
+    margin: 0 auto 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: {{ block.settings.icon_accent_color }};
+    color: #ffffff;
   }
 
-  .ai-honest-pricing-card-left-{{ ai_gen_id }}::before {
-    background-color: {{ block.settings.card_1_accent }};
+  .ai-quality-design-icon-wrapper-{{ ai_gen_id }} img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
   }
 
-  .ai-honest-pricing-card-right-{{ ai_gen_id }}::before {
-    background-color: {{ block.settings.card_2_accent }};
+  .ai-quality-design-icon-placeholder-{{ ai_gen_id }} {
+    font-size: calc({{ block.settings.desktop_icon_size }}px * 0.5);
   }
 
-  .ai-honest-pricing-card-title-{{ ai_gen_id }} {
-    font-size: 20px;
+  .ai-quality-design-label-{{ ai_gen_id }} {
+    font-size: {{ block.settings.desktop_label_size }}px;
     font-weight: 600;
-    margin: 0 0 16px;
-    color: {{ block.settings.text_color }};
+    color: {{ block.settings.label_color }};
+    margin: 0 0 8px;
   }
 
-  .ai-honest-pricing-card-description-{{ ai_gen_id }} {
-    font-size: {{ block.settings.desktop_card_body_size }}px;
-    color: {{ block.settings.text_color }};
+  .ai-quality-design-description-{{ ai_gen_id }} {
+    font-size: {{ block.settings.desktop_description_size }}px;
+    color: {{ block.settings.description_color }};
     opacity: 0.85;
-    line-height: 1.6;
+    line-height: 1.5;
     margin: 0;
   }
 
-  .ai-honest-pricing-example-{{ ai_gen_id }} {
-    margin-top: 20px;
-    padding: 16px;
-    background-color: rgba(0, 0, 0, 0.03);
-    border-radius: 8px;
-  }
-
-  .ai-honest-pricing-price-{{ ai_gen_id }} {
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 8px;
-  }
-
-  .ai-honest-pricing-strike-{{ ai_gen_id }} {
-    text-decoration: line-through;
-    opacity: 0.6;
-    margin-right: 8px;
-  }
-
-  .ai-honest-pricing-trust-{{ ai_gen_id }} {
-    text-align: center;
-    font-size: 16px;
-    color: {{ block.settings.text_color }};
-    opacity: 0.9;
-    font-weight: 500;
-  }
-
   @media screen and (max-width: 749px) {
-    .ai-honest-pricing-heading-{{ ai_gen_id }} {
+    .ai-quality-design-heading-{{ ai_gen_id }} {
       font-size: {{ block.settings.mobile_heading_size }}px;
     }
 
-    .ai-honest-pricing-card-description-{{ ai_gen_id }} {
-      font-size: {{ block.settings.mobile_card_body_size }}px;
+    .ai-quality-design-grid-{{ ai_gen_id }} {
+      grid-template-columns: repeat({{ block.settings.mobile_columns }}, 1fr);
+      gap: 20px;
     }
 
-    .ai-honest-pricing-cards-{{ ai_gen_id }} {
-      grid-template-columns: 1fr;
-      gap: 24px;
+    .ai-quality-design-icon-wrapper-{{ ai_gen_id }} {
+      width: {{ block.settings.mobile_icon_size }}px;
+      height: {{ block.settings.mobile_icon_size }}px;
+    }
+
+    .ai-quality-design-icon-placeholder-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.mobile_icon_size }}px * 0.5);
+    }
+
+    .ai-quality-design-label-{{ ai_gen_id }} {
+      font-size: {{ block.settings.mobile_label_size }}px;
+    }
+
+    .ai-quality-design-description-{{ ai_gen_id }} {
+      font-size: {{ block.settings.mobile_description_size }}px;
     }
   }
 {% endstyle %}
 
 {% if block.settings.show_section %}
-  <ai-honest-pricing-{{ ai_gen_id }} class="ai-honest-pricing-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
-    <div class="ai-honest-pricing-container-{{ ai_gen_id }}">
-      <div class="ai-honest-pricing-header-{{ ai_gen_id }}">
+  <ai-quality-design-{{ ai_gen_id }} class="ai-quality-design-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+    <div class="ai-quality-design-container-{{ ai_gen_id }}">
+      <div class="ai-quality-design-header-{{ ai_gen_id }}">
         {% if block.settings.heading != blank %}
-          <h2 class="ai-honest-pricing-heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
+          <h2 class="ai-quality-design-heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
         {% endif %}
         {% if block.settings.subheading != blank %}
-          <p class="ai-honest-pricing-subheading-{{ ai_gen_id }}">{{ block.settings.subheading }}</p>
+          <p class="ai-quality-design-subheading-{{ ai_gen_id }}">{{ block.settings.subheading }}</p>
         {% endif %}
       </div>
 
-      {% if block.settings.show_cards %}
-        <div class="ai-honest-pricing-cards-{{ ai_gen_id }}">
-          <div class="ai-honest-pricing-card-{{ ai_gen_id }} ai-honest-pricing-card-left-{{ ai_gen_id }}">
-            {% if block.settings.card_1_title != blank %}
-              <h3 class="ai-honest-pricing-card-title-{{ ai_gen_id }}">{{ block.settings.card_1_title }}</h3>
-            {% endif %}
-            {% if block.settings.card_1_description != blank %}
-              <div class="ai-honest-pricing-card-description-{{ ai_gen_id }}">
-                {{ block.settings.card_1_description }}
-              </div>
-            {% endif %}
-            <div class="ai-honest-pricing-example-{{ ai_gen_id }}">
-              <div class="ai-honest-pricing-price-{{ ai_gen_id }}">
-                <span class="ai-honest-pricing-strike-{{ ai_gen_id }}">₹4,000</span>
-                <span style="color: {{ block.settings.card_1_accent }};">₹2,000 (50% off)</span>
-              </div>
-              <div style="font-size: 13px; opacity: 0.7;">Inflated MRP to fake a discount</div>
-            </div>
-          </div>
+      <div class="ai-quality-design-grid-{{ ai_gen_id }}">
+        {% for i in (1..6) %}
+          {% liquid
+            assign show_key = 'item_' | append: i | append: '_show'
+            assign icon_key = 'item_' | append: i | append: '_icon'
+            assign label_key = 'item_' | append: i | append: '_label'
+            assign description_key = 'item_' | append: i | append: '_description'
 
-          <div class="ai-honest-pricing-card-{{ ai_gen_id }} ai-honest-pricing-card-right-{{ ai_gen_id }}">
-            {% if block.settings.card_2_title != blank %}
-              <h3 class="ai-honest-pricing-card-title-{{ ai_gen_id }}">{{ block.settings.card_2_title }}</h3>
-            {% endif %}
-            {% if block.settings.card_2_description != blank %}
-              <div class="ai-honest-pricing-card-description-{{ ai_gen_id }}">
-                {{ block.settings.card_2_description }}
-              </div>
-            {% endif %}
-            <div class="ai-honest-pricing-example-{{ ai_gen_id }}">
-              <div class="ai-honest-pricing-price-{{ ai_gen_id }}">
-                <span class="ai-honest-pricing-strike-{{ ai_gen_id }}">₹2,200</span>
-                <span style="color: {{ block.settings.card_2_accent }};">₹2,000 (10% off)</span>
-              </div>
-              <div style="font-size: 13px; opacity: 0.7;">Real price, real discount</div>
-            </div>
-          </div>
-        </div>
-      {% endif %}
+            assign show_item = block.settings[show_key]
+            assign icon = block.settings[icon_key]
+            assign label = block.settings[label_key]
+            assign description = block.settings[description_key]
+          %}
 
-      {% if block.settings.trust_statement != blank %}
-        <div class="ai-honest-pricing-trust-{{ ai_gen_id }}">
-          {{ block.settings.trust_statement }}
-        </div>
-      {% endif %}
+          {% if show_item %}
+            <div class="ai-quality-design-item-{{ ai_gen_id }}">
+              <div class="ai-quality-design-icon-wrapper-{{ ai_gen_id }}">
+                {% if icon %}
+                  <img src="{{ icon | image_url: width: 100 }}" alt="{{ label | escape }}" loading="lazy">
+                {% else %}
+                  <span class="ai-quality-design-icon-placeholder-{{ ai_gen_id }}">✦</span>
+                {% endif %}
+              </div>
+              {% if label != blank %}
+                <h3 class="ai-quality-design-label-{{ ai_gen_id }}">{{ label }}</h3>
+              {% endif %}
+              {% if description != blank %}
+                <p class="ai-quality-design-description-{{ ai_gen_id }}">{{ description }}</p>
+              {% endif %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
     </div>
-  </ai-honest-pricing-{{ ai_gen_id }}>
+  </ai-quality-design-{{ ai_gen_id }}>
 {% endif %}
 
 {% schema %}
 {
-  "name": "Honest pricing",
+  "name": "Quality and design",
   "tag": null,
   "settings": [
     {
@@ -329,73 +306,196 @@
       "type": "inline_richtext",
       "id": "heading",
       "label": "Heading",
-      "default": "No Drama. No Fake Discounts."
+      "default": "Top-Notch Quality & Design"
     },
     {
       "type": "inline_richtext",
       "id": "subheading",
       "label": "Subheading",
-      "default": "The price you see is honest. Always."
+      "default": "Every piece is handpicked, premium quality, and designed with care"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "desktop_columns",
+      "label": "Desktop columns",
+      "options": [
+        { "value": "2", "label": "2" },
+        { "value": "3", "label": "3" },
+        { "value": "4", "label": "4" }
+      ],
+      "default": "3"
+    },
+    {
+      "type": "select",
+      "id": "mobile_columns",
+      "label": "Mobile columns",
+      "options": [
+        { "value": "1", "label": "1" },
+        { "value": "2", "label": "2" }
+      ],
+      "default": "2"
+    },
+    {
+      "type": "header",
+      "content": "Item 1"
     },
     {
       "type": "checkbox",
-      "id": "show_cards",
-      "label": "Show comparison cards",
+      "id": "item_1_show",
+      "label": "Show item",
       "default": true
     },
     {
-      "type": "header",
-      "content": "Card 1"
+      "type": "image_picker",
+      "id": "item_1_icon",
+      "label": "Icon"
     },
     {
       "type": "text",
-      "id": "card_1_title",
-      "label": "Title",
-      "default": "How others do it"
+      "id": "item_1_label",
+      "label": "Label",
+      "default": "Handpicked Designs"
     },
     {
-      "type": "richtext",
-      "id": "card_1_description",
+      "type": "textarea",
+      "id": "item_1_description",
       "label": "Description",
-      "default": "<p>They inflate the MRP to ₹4,000, then show a fake 50% discount to make you think you're getting a deal.</p>"
-    },
-    {
-      "type": "color",
-      "id": "card_1_accent",
-      "label": "Accent color",
-      "default": "#e32402"
+      "default": "Every piece is personally curated, not bulk-sourced"
     },
     {
       "type": "header",
-      "content": "Card 2"
+      "content": "Item 2"
+    },
+    {
+      "type": "checkbox",
+      "id": "item_2_show",
+      "label": "Show item",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "item_2_icon",
+      "label": "Icon"
     },
     {
       "type": "text",
-      "id": "card_2_title",
-      "label": "Title",
-      "default": "How AdHouse does it"
+      "id": "item_2_label",
+      "label": "Label",
+      "default": "Premium Finish"
     },
     {
-      "type": "richtext",
-      "id": "card_2_description",
+      "type": "textarea",
+      "id": "item_2_description",
       "label": "Description",
-      "default": "<p>We set a fair MRP of ₹2,200 and offer a genuine 10% discount. No tricks, just honest pricing.</p>"
-    },
-    {
-      "type": "color",
-      "id": "card_2_accent",
-      "label": "Accent color",
-      "default": "#008060"
+      "default": "Smooth edges, rich plating, flawless look"
     },
     {
       "type": "header",
-      "content": "Trust statement"
+      "content": "Item 3"
     },
     {
-      "type": "richtext",
-      "id": "trust_statement",
-      "label": "Text",
-      "default": "<p>✓ Every discount is real. Every price is fair. That's the AdHouse promise.</p>"
+      "type": "checkbox",
+      "id": "item_3_show",
+      "label": "Show item",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "item_3_icon",
+      "label": "Icon"
+    },
+    {
+      "type": "text",
+      "id": "item_3_label",
+      "label": "Label",
+      "default": "Occasion Ready"
+    },
+    {
+      "type": "textarea",
+      "id": "item_3_description",
+      "label": "Description",
+      "default": "From festivals to everyday wear"
+    },
+    {
+      "type": "header",
+      "content": "Item 4"
+    },
+    {
+      "type": "checkbox",
+      "id": "item_4_show",
+      "label": "Show item",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "item_4_icon",
+      "label": "Icon"
+    },
+    {
+      "type": "text",
+      "id": "item_4_label",
+      "label": "Label",
+      "default": "Attention to Detail"
+    },
+    {
+      "type": "textarea",
+      "id": "item_4_description",
+      "label": "Description",
+      "default": "Crafted to look expensive, priced to be accessible"
+    },
+    {
+      "type": "header",
+      "content": "Item 5"
+    },
+    {
+      "type": "checkbox",
+      "id": "item_5_show",
+      "label": "Show item",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "item_5_icon",
+      "label": "Icon"
+    },
+    {
+      "type": "text",
+      "id": "item_5_label",
+      "label": "Label"
+    },
+    {
+      "type": "textarea",
+      "id": "item_5_description",
+      "label": "Description"
+    },
+    {
+      "type": "header",
+      "content": "Item 6"
+    },
+    {
+      "type": "checkbox",
+      "id": "item_6_show",
+      "label": "Show item",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "item_6_icon",
+      "label": "Icon"
+    },
+    {
+      "type": "text",
+      "id": "item_6_label",
+      "label": "Label"
+    },
+    {
+      "type": "textarea",
+      "id": "item_6_description",
+      "label": "Description"
     },
     {
       "type": "header",
@@ -412,7 +512,7 @@
       "id": "desktop_heading_size",
       "label": "Desktop heading size",
       "min": 24,
-      "max": 48,
+      "max": 44,
       "step": 2,
       "unit": "px",
       "default": 36
@@ -422,15 +522,25 @@
       "id": "mobile_heading_size",
       "label": "Mobile heading size",
       "min": 18,
-      "max": 32,
+      "max": 30,
       "step": 2,
       "unit": "px",
       "default": 24
     },
     {
       "type": "range",
-      "id": "desktop_card_body_size",
-      "label": "Desktop card body size",
+      "id": "desktop_label_size",
+      "label": "Desktop label size",
+      "min": 14,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "mobile_label_size",
+      "label": "Mobile label size",
       "min": 13,
       "max": 16,
       "step": 1,
@@ -439,13 +549,43 @@
     },
     {
       "type": "range",
-      "id": "mobile_card_body_size",
-      "label": "Mobile card body size",
+      "id": "desktop_description_size",
+      "label": "Desktop description size",
       "min": 12,
       "max": 15,
       "step": 1,
       "unit": "px",
       "default": 14
+    },
+    {
+      "type": "range",
+      "id": "mobile_description_size",
+      "label": "Mobile description size",
+      "min": 11,
+      "max": 14,
+      "step": 1,
+      "unit": "px",
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "desktop_icon_size",
+      "label": "Desktop icon size",
+      "min": 32,
+      "max": 64,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "mobile_icon_size",
+      "label": "Mobile icon size",
+      "min": 24,
+      "max": 48,
+      "step": 4,
+      "unit": "px",
+      "default": 40
     },
     {
       "type": "header",
@@ -455,7 +595,7 @@
       "type": "color",
       "id": "section_bg_color",
       "label": "Background",
-      "default": "#f7f7f7"
+      "default": "#fcfbfa"
     },
     {
       "type": "color",
@@ -467,6 +607,24 @@
       "type": "color",
       "id": "text_color",
       "label": "Text",
+      "default": "#422a24"
+    },
+    {
+      "type": "color",
+      "id": "icon_accent_color",
+      "label": "Icon accent",
+      "default": "#a46959"
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "Label",
+      "default": "#422a24"
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Description",
       "default": "#422a24"
     },
     {
@@ -482,7 +640,7 @@
   ],
   "presets": [
     {
-      "name": "Honest pricing"
+      "name": "Quality and design"
     }
   ]
 }
