@@ -1,6 +1,587 @@
+{% doc %}
+  @prompt
+    Shopify Page / Theme Customization Prompt — AdHouse.in USP Sections
+    
+    Create a fully customizable USP (Why Choose Us) section for the AdHouse.in Shopify store. This section should be added to the About Us page or usable as a standalone homepage section. All settings must be editable from the Shopify Theme Editor with separate controls for mobile and desktop where specified.
+    
+    SECTION 1 — Real Photos vs AI Images Comparison
+    Purpose: Build trust by showing customers that our product images are real, not AI-generated.
+    Layout:
+    
+    Two-column side-by-side layout on desktop
+    Stacked single column on mobile
+    Left card labeled "AI Generated Image" with a red or pink subtle badge
+    Right card labeled "Our Actual Product Photo" with a green badge
+    A short line of text below each image explaining the difference
+    Optional divider line or VS badge between the two columns
+    
+    Customizable settings in Theme Editor:
+    
+    Section heading text (default: "What You See Is What You Get")
+    Subheading text (default: "Unlike others, we never use AI-generated images. Every photo is our actual product.")
+    Left image upload (AI example photo)
+    Right image upload (actual product photo)
+    Left card badge text & badge color
+    Right card badge text & badge color
+    Caption text below each image
+    Desktop font size for heading — range 24px to 48px
+    Mobile font size for heading — range 18px to 32px
+    Desktop caption font size — range 12px to 16px
+    Mobile caption font size — range 11px to 14px
+    Section background color
+    Card background color
+    Text color
+    Toggle to show/hide the VS badge in the center
+    Toggle to show/hide this entire section
+    
+    
+    SECTION 2 — Honest Discounts, No Fake Pricing
+    Purpose: Reassure customers that our discounts are genuine — we never inflate MRP to fake a sale.
+    Layout:
+    
+    Full-width section with a bold headline
+    Two comparison cards side by side on desktop, stacked on mobile
+    Card 1 titled "How others do it" — showing inflated price → fake 50% off
+    Card 2 titled "How AdHouse does it" — showing fair original price → real honest discount
+    A short trust statement below both cards
+    
+    Customizable settings in Theme Editor:
+    
+    Section heading text (default: "No Drama. No Fake Discounts.")
+    Subheading (default: "The price you see is honest. Always.")
+    Card 1 title, description text, and accent color (default: soft red)
+    Card 2 title, description text, and accent color (default: soft green)
+    Trust statement text below cards
+    Desktop heading font size — range 24px to 48px
+    Mobile heading font size — range 18px to 32px
+    Desktop card body font size — range 13px to 16px
+    Mobile card body font size — range 12px to 15px
+    Section background color
+    Card background color
+    Toggle to show/hide the comparison cards
+    Toggle to show/hide this entire section
+    
+    
+    SECTION 3 — Top-Notch Quality & Design
+    Purpose: Highlight that every piece is handpicked, premium quality, and designed with care.
+    Layout:
+    
+    Centered headline and subheading
+    Icon + text grid below — 3 columns on desktop, 2 columns on mobile, 1 column on very small screens
+    Each grid item has an icon (uploadable or emoji), a bold label, and a short description
+    Optional product lifestyle image on the side or above the grid
+    
+    Default grid items (all editable):
+    
+    Handpicked Designs — "Every piece is personally curated, not bulk-sourced"
+    Premium Finish — "Smooth edges, rich plating, flawless look"
+    Occasion Ready — "From festivals to everyday wear"
+    Attention to Detail — "Crafted to look expensive, priced to be accessible"
+    
+    Customizable settings in Theme Editor:
+    
+    Section heading and subheading text
+    Number of grid columns on desktop (2, 3, or 4)
+    Number of grid columns on mobile (1 or 2)
+    Up to 6 grid items — each with icon upload, label text, description text, toggle to show/hide
+    Desktop heading font size — range 24px to 44px
+    Mobile heading font size — range 18px to 30px
+    Desktop grid label font size — range 14px to 18px
+    Mobile grid label font size — range 13px to 16px
+    Desktop grid description font size — range 12px to 15px
+    Mobile grid description font size — range 11px to 14px
+    Icon size on desktop (range 32px to 64px)
+    Icon size on mobile (range 24px to 48px)
+    Section background color
+    Icon accent color
+    Label text color
+    Description text color
+    Toggle to show/hide this entire section
+    
+    
+    SECTION 4 — Anti-Tarnish Tested
+    Purpose: Show that AdHouse jewellery is physically tested for durability, tarnish resistance, and skin safety.
+    Layout:
+    
+    Left side: bold headline, subheading, and a short paragraph
+    Right side: a checklist of tested properties with checkmark icons
+    On mobile: stacked, headline first then checklist
+    Optional badge or seal image (e.g., "Lab Tested" or "Quality Assured")
+    
+    Default checklist items (all editable):
+    
+    Anti-tarnish tested
+    Sweat and water resistant
+    Long-lasting gold/silver plating
+    Skin-safe and nickel-free
+    Stress-tested for clasps and settings
+    
+    Customizable settings in Theme Editor:
+    
+    Section heading text (default: "Built to Last. Tested to Prove It.")
+    Subheading and paragraph text
+    Up to 8 checklist items — each with text and toggle to show/hide
+    Ch, all the section are not build we need all of them 
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-trust-proof-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    padding: 40px 20px;
+    background-color: {{ block.settings.section_bg_color }};
+  }
+
+  .ai-trust-proof-container-{{ ai_gen_id }} {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .ai-trust-proof-header-{{ ai_gen_id }} {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .ai-trust-proof-heading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.desktop_heading_size }}px;
+    color: {{ block.settings.text_color }};
+    margin: 0 0 12px;
+    font-weight: 600;
+    font-family: {{ block.settings.heading_font.family }}, {{ block.settings.heading_font.fallback_families }};
+  }
+
+  .ai-trust-proof-subheading-{{ ai_gen_id }} {
+    font-size: 16px;
+    color: {{ block.settings.text_color }};
+    opacity: 0.8;
+    margin: 0;
+  }
+
+  .ai-trust-proof-stats-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat({{ block.settings.desktop_columns }}, 1fr);
+    gap: 32px;
+    margin-bottom: 48px;
+  }
+
+  .ai-trust-proof-stat-{{ ai_gen_id }} {
+    text-align: center;
+    padding: 32px 24px;
+    background-color: {{ block.settings.card_bg_color }};
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  }
+
+  .ai-trust-proof-stat-number-{{ ai_gen_id }} {
+    font-size: {{ block.settings.desktop_stat_size }}px;
+    font-weight: 700;
+    color: {{ block.settings.accent_color }};
+    margin: 0 0 8px;
+    line-height: 1.2;
+  }
+
+  .ai-trust-proof-stat-label-{{ ai_gen_id }} {
+    font-size: {{ block.settings.desktop_label_size }}px;
+    color: {{ block.settings.text_color }};
+    opacity: 0.85;
+    margin: 0;
+  }
+
+  .ai-trust-proof-badges-{{ ai_gen_id }} {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .ai-trust-proof-badge-{{ ai_gen_id }} {
+    max-width: 120px;
+    height: auto;
+  }
+
+  .ai-trust-proof-badge-{{ ai_gen_id }} img {
+    width: 100%;
+    height: auto;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+  }
+
+  .ai-trust-proof-badge-{{ ai_gen_id }} img:hover {
+    opacity: 1;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-trust-proof-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.mobile_heading_size }}px;
+    }
+
+    .ai-trust-proof-stat-number-{{ ai_gen_id }} {
+      font-size: {{ block.settings.mobile_stat_size }}px;
+    }
+
+    .ai-trust-proof-stat-label-{{ ai_gen_id }} {
+      font-size: {{ block.settings.mobile_label_size }}px;
+    }
+
+    .ai-trust-proof-stats-{{ ai_gen_id }} {
+      grid-template-columns: repeat({{ block.settings.mobile_columns }}, 1fr);
+      gap: 20px;
+    }
+  }
+{% endstyle %}
+
+{% if block.settings.show_section %}
+  <ai-trust-proof-{{ ai_gen_id }} class="ai-trust-proof-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+    <div class="ai-trust-proof-container-{{ ai_gen_id }}">
+      <div class="ai-trust-proof-header-{{ ai_gen_id }}">
+        {% if block.settings.heading != blank %}
+          <h2 class="ai-trust-proof-heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
+        {% endif %}
+        {% if block.settings.subheading != blank %}
+          <p class="ai-trust-proof-subheading-{{ ai_gen_id }}">{{ block.settings.subheading }}</p>
+        {% endif %}
+      </div>
+
+      <div class="ai-trust-proof-stats-{{ ai_gen_id }}">
+        {% for i in (1..4) %}
+          {% liquid
+            assign show_key = 'stat_' | append: i | append: '_show'
+            assign number_key = 'stat_' | append: i | append: '_number'
+            assign label_key = 'stat_' | append: i | append: '_label'
+
+            assign show_stat = block.settings[show_key]
+            assign stat_number = block.settings[number_key]
+            assign stat_label = block.settings[label_key]
+          %}
+
+          {% if show_stat %}
+            <div class="ai-trust-proof-stat-{{ ai_gen_id }}">
+              {% if stat_number != blank %}
+                <div class="ai-trust-proof-stat-number-{{ ai_gen_id }}">{{ stat_number }}</div>
+              {% endif %}
+              {% if stat_label != blank %}
+                <div class="ai-trust-proof-stat-label-{{ ai_gen_id }}">{{ stat_label }}</div>
+              {% endif %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      {% if block.settings.show_badges %}
+        <div class="ai-trust-proof-badges-{{ ai_gen_id }}">
+          {% for i in (1..5) %}
+            {% liquid
+              assign badge_key = 'badge_' | append: i
+
+              assign badge_image = block.settings[badge_key]
+            %}
+
+            {% if badge_image %}
+              <div class="ai-trust-proof-badge-{{ ai_gen_id }}">
+                <img
+                  src="{{ badge_image | image_url: width: 240 }}"
+                  alt="Trust badge {{ i }}"
+                  loading="lazy"
+                >
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </ai-trust-proof-{{ ai_gen_id }}>
+{% endif %}
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Trust and social proof",
+  "tag": null,
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_section",
+      "label": "Show section",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Trusted by Thousands"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Join our community of happy customers"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "desktop_columns",
+      "label": "Desktop columns",
+      "options": [
+        { "value": "2", "label": "2" },
+        { "value": "3", "label": "3" },
+        { "value": "4", "label": "4" }
+      ],
+      "default": "4"
+    },
+    {
+      "type": "select",
+      "id": "mobile_columns",
+      "label": "Mobile columns",
+      "options": [
+        { "value": "1", "label": "1" },
+        { "value": "2", "label": "2" }
+      ],
+      "default": "2"
+    },
+    {
+      "type": "header",
+      "content": "Stat 1"
+    },
+    {
+      "type": "checkbox",
+      "id": "stat_1_show",
+      "label": "Show stat",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "stat_1_number",
+      "label": "Number",
+      "default": "50,000+"
+    },
+    {
+      "type": "text",
+      "id": "stat_1_label",
+      "label": "Label",
+      "default": "Happy Customers"
+    },
+    {
+      "type": "header",
+      "content": "Stat 2"
+    },
+    {
+      "type": "checkbox",
+      "id": "stat_2_show",
+      "label": "Show stat",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "stat_2_number",
+      "label": "Number",
+      "default": "4.8/5"
+    },
+    {
+      "type": "text",
+      "id": "stat_2_label",
+      "label": "Label",
+      "default": "Average Rating"
+    },
+    {
+      "type": "header",
+      "content": "Stat 3"
+    },
+    {
+      "type": "checkbox",
+      "id": "stat_3_show",
+      "label": "Show stat",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "stat_3_number",
+      "label": "Number",
+      "default": "10,000+"
+    },
+    {
+      "type": "text",
+      "id": "stat_3_label",
+      "label": "Label",
+      "default": "5-Star Reviews"
+    },
+    {
+      "type": "header",
+      "content": "Stat 4"
+    },
+    {
+      "type": "checkbox",
+      "id": "stat_4_show",
+      "label": "Show stat",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "stat_4_number",
+      "label": "Number",
+      "default": "100%"
+    },
+    {
+      "type": "text",
+      "id": "stat_4_label",
+      "label": "Label",
+      "default": "Quality Guaranteed"
+    },
+    {
+      "type": "header",
+      "content": "Trust badges"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_badges",
+      "label": "Show badges",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "badge_1",
+      "label": "Badge 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "badge_2",
+      "label": "Badge 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "badge_3",
+      "label": "Badge 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "badge_4",
+      "label": "Badge 4"
+    },
+    {
+      "type": "image_picker",
+      "id": "badge_5",
+      "label": "Badge 5"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "font_picker",
+      "id": "heading_font",
+      "label": "Heading font",
+      "default": "plus_jakarta_sans_n4"
+    },
+    {
+      "type": "range",
+      "id": "desktop_heading_size",
+      "label": "Desktop heading size",
+      "min": 24,
+      "max": 44,
+      "step": 2,
+      "unit": "px",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_size",
+      "label": "Mobile heading size",
+      "min": 18,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "desktop_stat_size",
+      "label": "Desktop stat size",
+      "min": 32,
+      "max": 56,
+      "step": 2,
+      "unit": "px",
+      "default": 42
+    },
+    {
+      "type": "range",
+      "id": "mobile_stat_size",
+      "label": "Mobile stat size",
+      "min": 24,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "desktop_label_size",
+      "label": "Desktop label size",
+      "min": 13,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "mobile_label_size",
+      "label": "Mobile label size",
+      "min": 12,
+      "max": 15,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "section_bg_color",
+      "label": "Background",
+      "default": "#fcfbfa"
+    },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "Card background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#422a24"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent",
+      "default": "#a46959"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    }
+  ],
+  "presets": [
+    {
+      "name": "Trust and social proof"
+    }
+  ]
+}
 {% endschema %}
