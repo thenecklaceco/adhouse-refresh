@@ -11,79 +11,13 @@
   "sections": {
     "main": {
       "type": "main-page",
-      "disabled": true,
       "settings": {
         "padding_top": 36,
         "padding_bottom": 28
       }
-    },
-    "1775040118e17c42a8": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_02c3443_raW7Qa": {
-          "type": "ai_gen_block_02c3443",
-          "settings": {
-            "show_section": true,
-            "heading": "We're Here to Help",
-            "subheading": "Reach out anytime — we respond fast",
-            "desktop_columns": "3",
-            "mobile_columns": "1",
-            "channel_1_show": true,
-            "channel_1_title": "WhatsApp",
-            "channel_1_description": "Chat with us instantly",
-            "channel_1_link_text": "Chat Now",
-            "channel_1_link_url": "",
-            "channel_2_show": true,
-            "channel_2_title": "Email",
-            "channel_2_description": "support@adhouse.in",
-            "channel_2_link_text": "Send Email",
-            "channel_2_link_url": "",
-            "channel_3_show": true,
-            "channel_3_title": "Phone",
-            "channel_3_description": "Mon-Sat, 10 AM - 6 PM",
-            "channel_3_link_text": "Call Us",
-            "channel_3_link_url": "",
-            "channel_4_show": false,
-            "channel_4_title": "",
-            "channel_4_description": "",
-            "channel_4_link_text": "",
-            "channel_4_link_url": "",
-            "heading_font": "plus_jakarta_sans_n4",
-            "desktop_heading_size": 36,
-            "mobile_heading_size": 24,
-            "desktop_title_size": 18,
-            "mobile_title_size": 16,
-            "desktop_description_size": 14,
-            "mobile_description_size": 13,
-            "desktop_icon_size": 64,
-            "mobile_icon_size": 56,
-            "section_bg_color": "#f7f7f7",
-            "card_bg_color": "#ffffff",
-            "text_color": "#422a24",
-            "icon_bg_color": "#a46959",
-            "icon_color": "#ffffff",
-            "button_bg_color": "#a46959",
-            "button_text_color": "#ffffff",
-            "button_hover_color": "#835447",
-            "desktop_width_percent": 100
-          },
-          "blocks": {}
-        },
-        "ai_gen_block_65325a0_D7ddxB": {
-          "type": "ai_gen_block_65325a0",
-          "settings": {},
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_02c3443_raW7Qa",
-        "ai_gen_block_65325a0_D7ddxB"
-      ],
-      "settings": {}
     }
   },
   "order": [
-    "main",
-    "1775040118e17c42a8"
+    "main"
   ]
 }
