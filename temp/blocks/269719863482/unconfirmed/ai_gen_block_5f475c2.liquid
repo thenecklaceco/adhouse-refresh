@@ -1,6 +1,545 @@
+{% doc %}
+  @prompt
+    Shopify Page / Theme Customization Prompt — AdHouse.in USP Sections
+    
+    Create a fully customizable USP (Why Choose Us) section for the AdHouse.in Shopify store. This section should be added to the About Us page or usable as a standalone homepage section. All settings must be editable from the Shopify Theme Editor with separate controls for mobile and desktop where specified.
+    
+    SECTION 1 — Real Photos vs AI Images Comparison
+    Purpose: Build trust by showing customers that our product images are real, not AI-generated.
+    Layout:
+    
+    Two-column side-by-side layout on desktop
+    Stacked single column on mobile
+    Left card labeled "AI Generated Image" with a red or pink subtle badge
+    Right card labeled "Our Actual Product Photo" with a green badge
+    A short line of text below each image explaining the difference
+    Optional divider line or VS badge between the two columns
+    
+    Customizable settings in Theme Editor:
+    
+    Section heading text (default: "What You See Is What You Get")
+    Subheading text (default: "Unlike others, we never use AI-generated images. Every photo is our actual product.")
+    Left image upload (AI example photo)
+    Right image upload (actual product photo)
+    Left card badge text & badge color
+    Right card badge text & badge color
+    Caption text below each image
+    Desktop font size for heading — range 24px to 48px
+    Mobile font size for heading — range 18px to 32px
+    Desktop caption font size — range 12px to 16px
+    Mobile caption font size — range 11px to 14px
+    Section background color
+    Card background color
+    Text color
+    Toggle to show/hide the VS badge in the center
+    Toggle to show/hide this entire section
+    
+    
+    SECTION 2 — Honest Discounts, No Fake Pricing
+    Purpose: Reassure customers that our discounts are genuine — we never inflate MRP to fake a sale.
+    Layout:
+    
+    Full-width section with a bold headline
+    Two comparison cards side by side on desktop, stacked on mobile
+    Card 1 titled "How others do it" — showing inflated price → fake 50% off
+    Card 2 titled "How AdHouse does it" — showing fair original price → real honest discount
+    A short trust statement below both cards
+    
+    Customizable settings in Theme Editor:
+    
+    Section heading text (default: "No Drama. No Fake Discounts.")
+    Subheading (default: "The price you see is honest. Always.")
+    Card 1 title, description text, and accent color (default: soft red)
+    Card 2 title, description text, and accent color (default: soft green)
+    Trust statement text below cards
+    Desktop heading font size — range 24px to 48px
+    Mobile heading font size — range 18px to 32px
+    Desktop card body font size — range 13px to 16px
+    Mobile card body font size — range 12px to 15px
+    Section background color
+    Card background color
+    Toggle to show/hide the comparison cards
+    Toggle to show/hide this entire section
+    
+    
+    SECTION 3 — Top-Notch Quality & Design
+    Purpose: Highlight that every piece is handpicked, premium quality, and designed with care.
+    Layout:
+    
+    Centered headline and subheading
+    Icon + text grid below — 3 columns on desktop, 2 columns on mobile, 1 column on very small screens
+    Each grid item has an icon (uploadable or emoji), a bold label, and a short description
+    Optional product lifestyle image on the side or above the grid
+    
+    Default grid items (all editable):
+    
+    Handpicked Designs — "Every piece is personally curated, not bulk-sourced"
+    Premium Finish — "Smooth edges, rich plating, flawless look"
+    Occasion Ready — "From festivals to everyday wear"
+    Attention to Detail — "Crafted to look expensive, priced to be accessible"
+    
+    Customizable settings in Theme Editor:
+    
+    Section heading and subheading text
+    Number of grid columns on desktop (2, 3, or 4)
+    Number of grid columns on mobile (1 or 2)
+    Up to 6 grid items — each with icon upload, label text, description text, toggle to show/hide
+    Desktop heading font size — range 24px to 44px
+    Mobile heading font size — range 18px to 30px
+    Desktop grid label font size — range 14px to 18px
+    Mobile grid label font size — range 13px to 16px
+    Desktop grid description font size — range 12px to 15px
+    Mobile grid description font size — range 11px to 14px
+    Icon size on desktop (range 32px to 64px)
+    Icon size on mobile (range 24px to 48px)
+    Section background color
+    Icon accent color
+    Label text color
+    Description text color
+    Toggle to show/hide this entire section
+    
+    
+    SECTION 4 — Anti-Tarnish Tested
+    Purpose: Show that AdHouse jewellery is physically tested for durability, tarnish resistance, and skin safety.
+    Layout:
+    
+    Left side: bold headline, subheading, and a short paragraph
+    Right side: a checklist of tested properties with checkmark icons
+    On mobile: stacked, headline first then checklist
+    Optional badge or seal image (e.g., "Lab Tested" or "Quality Assured")
+    
+    Default checklist items (all editable):
+    
+    Anti-tarnish tested
+    Sweat and water resistant
+    Long-lasting gold/silver plating
+    Skin-safe and nickel-free
+    Stress-tested for clasps and settings
+    
+    Customizable settings in Theme Editor:
+    
+    Section heading text (default: "Built to Last. Tested to Prove It.")
+    Subheading and paragraph text
+    Up to 8 checklist items — each with text and toggle to show/hide
+    Ch
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-real-vs-ai-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    padding: 40px 20px;
+    background-color: {{ block.settings.section_bg_color }};
+  }
+
+  .ai-real-vs-ai-container-{{ ai_gen_id }} {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .ai-real-vs-ai-header-{{ ai_gen_id }} {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .ai-real-vs-ai-heading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.desktop_heading_size }}px;
+    color: {{ block.settings.text_color }};
+    margin: 0 0 12px;
+    font-weight: 600;
+    font-family: {{ block.settings.heading_font.family }}, {{ block.settings.heading_font.fallback_families }};
+  }
+
+  .ai-real-vs-ai-subheading-{{ ai_gen_id }} {
+    font-size: 16px;
+    color: {{ block.settings.text_color }};
+    opacity: 0.8;
+    margin: 0;
+  }
+
+  .ai-real-vs-ai-comparison-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .ai-real-vs-ai-card-{{ ai_gen_id }} {
+    background-color: {{ block.settings.card_bg_color }};
+    border-radius: 18px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  .ai-real-vs-ai-image-wrapper-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 16px;
+  }
+
+  .ai-real-vs-ai-image-wrapper-{{ ai_gen_id }} img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-real-vs-ai-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-real-vs-ai-placeholder-{{ ai_gen_id }} svg {
+    width: 60%;
+    height: 60%;
+    opacity: 0.3;
+  }
+
+  .ai-real-vs-ai-badge-{{ ai_gen_id }} {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .ai-real-vs-ai-badge-left-{{ ai_gen_id }} {
+    background-color: {{ block.settings.left_badge_color }};
+    color: #ffffff;
+  }
+
+  .ai-real-vs-ai-badge-right-{{ ai_gen_id }} {
+    background-color: {{ block.settings.right_badge_color }};
+    color: #ffffff;
+  }
+
+  .ai-real-vs-ai-caption-{{ ai_gen_id }} {
+    font-size: {{ block.settings.desktop_caption_size }}px;
+    color: {{ block.settings.text_color }};
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  .ai-real-vs-ai-divider-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 700;
+    color: {{ block.settings.text_color }};
+    opacity: 0.6;
+    padding: 0 12px;
+  }
+
+  .ai-real-vs-ai-vs-badge-{{ ai_gen_id }} {
+    background-color: {{ block.settings.text_color }};
+    color: {{ block.settings.section_bg_color }};
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-real-vs-ai-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.mobile_heading_size }}px;
+    }
+
+    .ai-real-vs-ai-caption-{{ ai_gen_id }} {
+      font-size: {{ block.settings.mobile_caption_size }}px;
+    }
+
+    .ai-real-vs-ai-comparison-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    .ai-real-vs-ai-divider-{{ ai_gen_id }} {
+      order: 2;
+    }
+
+    .ai-real-vs-ai-card-{{ ai_gen_id }}:first-child {
+      order: 1;
+    }
+
+    .ai-real-vs-ai-card-{{ ai_gen_id }}:last-child {
+      order: 3;
+    }
+  }
+{% endstyle %}
+
+{% if block.settings.show_section %}
+  <ai-real-vs-ai-{{ ai_gen_id }} class="ai-real-vs-ai-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+    <div class="ai-real-vs-ai-container-{{ ai_gen_id }}">
+      <div class="ai-real-vs-ai-header-{{ ai_gen_id }}">
+        {% if block.settings.heading != blank %}
+          <h2 class="ai-real-vs-ai-heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
+        {% endif %}
+        {% if block.settings.subheading != blank %}
+          <p class="ai-real-vs-ai-subheading-{{ ai_gen_id }}">{{ block.settings.subheading }}</p>
+        {% endif %}
+      </div>
+
+      <div class="ai-real-vs-ai-comparison-{{ ai_gen_id }}">
+        <div class="ai-real-vs-ai-card-{{ ai_gen_id }}">
+          <div class="ai-real-vs-ai-image-wrapper-{{ ai_gen_id }}">
+            {% if block.settings.left_image %}
+              <img
+                src="{{ block.settings.left_image | image_url: width: 800 }}"
+                alt="{{ block.settings.left_image.alt | escape }}"
+                loading="lazy"
+                width="800"
+                height="800"
+              >
+            {% else %}
+              <div class="ai-real-vs-ai-placeholder-{{ ai_gen_id }}">
+                {{ 'product-1' | placeholder_svg_tag }}
+              </div>
+            {% endif %}
+            <div class="ai-real-vs-ai-badge-{{ ai_gen_id }} ai-real-vs-ai-badge-left-{{ ai_gen_id }}">
+              {{ block.settings.left_badge_text }}
+            </div>
+          </div>
+          {% if block.settings.left_caption != blank %}
+            <div class="ai-real-vs-ai-caption-{{ ai_gen_id }}">
+              {{ block.settings.left_caption }}
+            </div>
+          {% endif %}
+        </div>
+
+        {% if block.settings.show_vs_badge %}
+          <div class="ai-real-vs-ai-divider-{{ ai_gen_id }}">
+            <div class="ai-real-vs-ai-vs-badge-{{ ai_gen_id }}">VS</div>
+          </div>
+        {% else %}
+          <div class="ai-real-vs-ai-divider-{{ ai_gen_id }}">
+            ⟷
+          </div>
+        {% endif %}
+
+        <div class="ai-real-vs-ai-card-{{ ai_gen_id }}">
+          <div class="ai-real-vs-ai-image-wrapper-{{ ai_gen_id }}">
+            {% if block.settings.right_image %}
+              <img
+                src="{{ block.settings.right_image | image_url: width: 800 }}"
+                alt="{{ block.settings.right_image.alt | escape }}"
+                loading="lazy"
+                width="800"
+                height="800"
+              >
+            {% else %}
+              <div class="ai-real-vs-ai-placeholder-{{ ai_gen_id }}">
+                {{ 'product-1' | placeholder_svg_tag }}
+              </div>
+            {% endif %}
+            <div class="ai-real-vs-ai-badge-{{ ai_gen_id }} ai-real-vs-ai-badge-right-{{ ai_gen_id }}">
+              {{ block.settings.right_badge_text }}
+            </div>
+          </div>
+          {% if block.settings.right_caption != blank %}
+            <div class="ai-real-vs-ai-caption-{{ ai_gen_id }}">
+              {{ block.settings.right_caption }}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </ai-real-vs-ai-{{ ai_gen_id }}>
+{% endif %}
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Real vs AI photos",
+  "tag": null,
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_section",
+      "label": "Show section",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "What You See Is What You Get"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Unlike others, we never use AI-generated images. Every photo is our actual product."
+    },
+    {
+      "type": "header",
+      "content": "Left card"
+    },
+    {
+      "type": "image_picker",
+      "id": "left_image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "left_badge_text",
+      "label": "Badge text",
+      "default": "AI Generated"
+    },
+    {
+      "type": "color",
+      "id": "left_badge_color",
+      "label": "Badge color",
+      "default": "#e32402"
+    },
+    {
+      "type": "textarea",
+      "id": "left_caption",
+      "label": "Caption",
+      "default": "Artificially created image — not the real product"
+    },
+    {
+      "type": "header",
+      "content": "Right card"
+    },
+    {
+      "type": "image_picker",
+      "id": "right_image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "right_badge_text",
+      "label": "Badge text",
+      "default": "Actual Product"
+    },
+    {
+      "type": "color",
+      "id": "right_badge_color",
+      "label": "Badge color",
+      "default": "#008060"
+    },
+    {
+      "type": "textarea",
+      "id": "right_caption",
+      "label": "Caption",
+      "default": "Real photo of the exact product you'll receive"
+    },
+    {
+      "type": "header",
+      "content": "Divider"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vs_badge",
+      "label": "Show VS badge",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "font_picker",
+      "id": "heading_font",
+      "label": "Heading font",
+      "default": "plus_jakarta_sans_n4"
+    },
+    {
+      "type": "range",
+      "id": "desktop_heading_size",
+      "label": "Desktop heading size",
+      "min": 24,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_size",
+      "label": "Mobile heading size",
+      "min": 18,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "desktop_caption_size",
+      "label": "Desktop caption size",
+      "min": 12,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "mobile_caption_size",
+      "label": "Mobile caption size",
+      "min": 11,
+      "max": 14,
+      "step": 1,
+      "unit": "px",
+      "default": 13
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "section_bg_color",
+      "label": "Background",
+      "default": "#fcfbfa"
+    },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "Card background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#422a24"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    }
+  ],
+  "presets": [
+    {
+      "name": "Real vs AI photos"
+    }
+  ]
+}
 {% endschema %}
