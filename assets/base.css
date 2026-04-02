@@ -3595,3 +3595,515 @@ details-disclosure > details {
     transform: translateX(100%) scaleX(0);
   }
 }
+
+
+/* =============================================================================
+   SHOPIFY RTE (Rich Text Editor) — Complete Stylesheet
+   Compatible with: Dawn, Debut, Narrative, Brooklyn, Venture, Prestige,
+   Impulse, Pipeline, Turbo, and most custom Shopify themes.
+   Usage: Add .rte class to any wrapper around metafield / page / blog content.
+   ============================================================================= */
+
+/* ─── CSS Custom Properties (override in your theme's base.css) ─────────────── */
+:root {
+  --rte-font-family: inherit;
+  --rte-font-size: 1rem;           /* 16px base */
+  --rte-line-height: 1.75;
+  --rte-color-text: #1a1a1a;
+  --rte-color-heading: #111111;
+  --rte-color-link: #0066cc;
+  --rte-color-link-hover: #004499;
+  --rte-color-blockquote-border: #d4d4d4;
+  --rte-color-blockquote-bg: #f9f9f9;
+  --rte-color-blockquote-text: #555555;
+  --rte-color-code-bg: #f3f4f6;
+  --rte-color-code-text: #c7254e;
+  --rte-color-pre-bg: #1e1e1e;
+  --rte-color-pre-text: #f8f8f2;
+  --rte-color-hr: #e5e5e5;
+  --rte-color-table-border: #e0e0e0;
+  --rte-color-table-th-bg: #f5f5f5;
+  --rte-color-table-row-alt: #fafafa;
+  --rte-color-mark: #fff3cd;
+  --rte-spacing-base: 1em;
+  --rte-border-radius: 4px;
+  --rte-max-width: 100%;
+}
+
+
+/* ─── Base Container ─────────────────────────────────────────────────────────── */
+.rte {
+  font-family: var(--rte-font-family);
+  font-size: var(--rte-font-size);
+  line-height: var(--rte-line-height);
+  color: var(--rte-color-text);
+  max-width: var(--rte-max-width);
+  word-break: break-word;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Collapse first/last child margins so the RTE block doesn't create ghost space */
+.rte > *:first-child { margin-top: 0 !important; }
+.rte > *:last-child  { margin-bottom: 0 !important; }
+
+
+/* ─── Headings ───────────────────────────────────────────────────────────────── */
+.rte h1,
+.rte h2,
+.rte h3,
+.rte h4,
+.rte h5,
+.rte h6 {
+  font-family: var(--rte-font-family);
+  color: var(--rte-color-heading);
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 1.5em 0 0.5em;
+  letter-spacing: -0.01em;
+}
+
+.rte h1 { font-size: 2em; }
+.rte h2 { font-size: 1.6em; }
+.rte h3 { font-size: 1.35em; }
+.rte h4 { font-size: 1.15em; }
+.rte h5 { font-size: 1em; }
+.rte h6 { font-size: 0.9em; color: #666; }
+
+/* Heading immediately after heading — reduce gap */
+.rte h1 + h2,
+.rte h2 + h3,
+.rte h3 + h4,
+.rte h4 + h5,
+.rte h5 + h6 {
+  margin-top: 0.25em;
+}
+
+
+/* ─── Paragraphs ─────────────────────────────────────────────────────────────── */
+.rte p {
+  margin: 0 0 var(--rte-spacing-base);
+}
+
+.rte p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* ─── Links ──────────────────────────────────────────────────────────────────── */
+.rte a {
+  color: var(--rte-color-link);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.rte a:hover,
+.rte a:focus {
+  color: var(--rte-color-link-hover);
+  opacity: 0.85;
+  outline: none;
+}
+
+.rte a:focus-visible {
+  outline: 2px solid var(--rte-color-link);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+
+/* ─── Strong / Em / Mark ─────────────────────────────────────────────────────── */
+.rte strong,
+.rte b {
+  font-weight: 700;
+}
+
+.rte em,
+.rte i {
+  font-style: italic;
+}
+
+.rte u {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.rte s,
+.rte del {
+  text-decoration: line-through;
+  opacity: 0.65;
+}
+
+.rte mark {
+  background-color: var(--rte-color-mark);
+  color: inherit;
+  padding: 0 0.2em;
+  border-radius: 2px;
+}
+
+.rte small {
+  font-size: 0.85em;
+}
+
+.rte sup,
+.rte sub {
+  font-size: 0.75em;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.rte sup { top: -0.5em; }
+.rte sub { bottom: -0.25em; }
+
+.rte abbr[title] {
+  text-decoration: underline dotted;
+  cursor: help;
+}
+
+
+/* ─── Lists ──────────────────────────────────────────────────────────────────── */
+.rte ul,
+.rte ol {
+  margin: 0 0 var(--rte-spacing-base) 1.5em;
+  padding: 0;
+}
+
+.rte ul { list-style: disc; }
+.rte ol { list-style: decimal; }
+
+.rte li {
+  margin-bottom: 0.35em;
+  line-height: var(--rte-line-height);
+}
+
+/* Nested lists */
+.rte ul ul,
+.rte ol ol,
+.rte ul ol,
+.rte ol ul {
+  margin: 0.35em 0 0.35em 1.25em;
+}
+
+.rte ul ul       { list-style: circle; }
+.rte ul ul ul    { list-style: square; }
+
+.rte ol ol       { list-style: lower-alpha; }
+.rte ol ol ol    { list-style: lower-roman; }
+
+/* Definition list */
+.rte dl { margin: 0 0 var(--rte-spacing-base); }
+.rte dt { font-weight: 700; margin-top: 0.5em; }
+.rte dd { margin: 0 0 0.25em 1.5em; }
+
+
+/* ─── Blockquote ─────────────────────────────────────────────────────────────── */
+.rte blockquote {
+  margin: 1.5em 0;
+  padding: 1em 1.25em 1em 1.5em;
+  border-left: 4px solid var(--rte-color-blockquote-border);
+  background: var(--rte-color-blockquote-bg);
+  color: var(--rte-color-blockquote-text);
+  font-style: italic;
+  border-radius: 0 var(--rte-border-radius) var(--rte-border-radius) 0;
+}
+
+.rte blockquote p { margin-bottom: 0; }
+
+.rte blockquote cite {
+  display: block;
+  margin-top: 0.75em;
+  font-size: 0.875em;
+  font-style: normal;
+  color: #888;
+}
+
+.rte blockquote cite::before { content: "— "; }
+
+
+/* ─── Horizontal Rule ────────────────────────────────────────────────────────── */
+.rte hr {
+  border: none;
+  border-top: 1px solid var(--rte-color-hr);
+  margin: 2em 0;
+}
+
+
+/* ─── Inline Code & Pre / Code Block ────────────────────────────────────────── */
+.rte code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.875em;
+  background: var(--rte-color-code-bg);
+  color: var(--rte-color-code-text);
+  padding: 0.15em 0.4em;
+  border-radius: var(--rte-border-radius);
+  border: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.rte pre {
+  background: var(--rte-color-pre-bg);
+  color: var(--rte-color-pre-text);
+  padding: 1.25em 1.5em;
+  border-radius: var(--rte-border-radius);
+  overflow-x: auto;
+  margin: 0 0 var(--rte-spacing-base);
+  line-height: 1.6;
+  font-size: 0.875em;
+  -webkit-overflow-scrolling: touch;
+}
+
+.rte pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  border: none;
+  font-size: inherit;
+}
+
+
+/* ─── Images ─────────────────────────────────────────────────────────────────── */
+.rte img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--rte-border-radius);
+}
+
+/* Inline images (e.g., inside <p>) */
+.rte p img {
+  display: inline;
+  vertical-align: middle;
+}
+
+/* Captioned figures */
+.rte figure {
+  margin: 1.5em 0;
+}
+
+.rte figcaption {
+  margin-top: 0.5em;
+  font-size: 0.85em;
+  color: #888;
+  text-align: center;
+  font-style: italic;
+}
+
+
+/* ─── Tables ─────────────────────────────────────────────────────────────────── */
+.rte table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  font-size: 0.95em;
+  overflow-x: auto;
+  display: block;           /* allows horizontal scroll on mobile */
+  -webkit-overflow-scrolling: touch;
+}
+
+.rte table thead {
+  background: var(--rte-color-table-th-bg);
+}
+
+.rte table th,
+.rte table td {
+  padding: 0.6em 0.9em;
+  border: 1px solid var(--rte-color-table-border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.rte table th {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.rte table tbody tr:nth-child(even) {
+  background: var(--rte-color-table-row-alt);
+}
+
+.rte table tbody tr:hover {
+  background: rgba(0, 0, 0, 0.025);
+}
+
+/* Responsive table wrapper — use this in Liquid:
+   <div class="rte-table-wrap"><table>...</table></div> */
+.rte-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1.5em 0;
+}
+
+.rte-table-wrap table {
+  display: table;
+  margin: 0;
+}
+
+
+/* ─── Embedded Media (iframes / video) ──────────────────────────────────────── */
+.rte iframe,
+.rte video,
+.rte embed,
+.rte object {
+  max-width: 100%;
+  display: block;
+  border: none;
+}
+
+/* Responsive 16:9 embed wrapper */
+.rte .video-wrapper,
+.rte .iframe-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: var(--rte-border-radius);
+  margin: 1.5em 0;
+}
+
+.rte .video-wrapper iframe,
+.rte .iframe-wrapper iframe,
+.rte .video-wrapper video,
+.rte .iframe-wrapper video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+/* ─── Shopify-specific: Alignment classes from RTE toolbar ──────────────────── */
+.rte .text-left,
+.rte [style*="text-align: left"],
+.rte [align="left"] {
+  text-align: left;
+}
+
+.rte .text-center,
+.rte [style*="text-align: center"],
+.rte [align="center"] {
+  text-align: center;
+}
+
+.rte .text-right,
+.rte [style*="text-align: right"],
+.rte [align="right"] {
+  text-align: right;
+}
+
+/* Shopify injects inline style="text-align:..." — honour those */
+.rte [style*="text-align"] { /* noop, already inherits */ }
+
+/* Image alignment (Shopify adds float via inline style or class) */
+.rte .align-left,
+.rte img[style*="float: left"] {
+  float: left;
+  margin: 0 1.25em 1em 0;
+}
+
+.rte .align-right,
+.rte img[style*="float: right"] {
+  float: right;
+  margin: 0 0 1em 1.25em;
+}
+
+.rte .align-center,
+.rte img[style*="display: block; margin: auto"],
+.rte img[style*="margin: auto"] {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Clear floats after RTE content */
+.rte::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+/* ─── Shopify Metafield: Color Swatch / Tag Pills (bonus) ───────────────────── */
+.rte .tag {
+  display: inline-block;
+  padding: 0.2em 0.6em;
+  border-radius: 2em;
+  background: #f0f0f0;
+  font-size: 0.8em;
+  color: #444;
+  margin: 0.1em;
+}
+
+
+/* ─── Button-like links (Shopify pages often embed CTA links) ───────────────── */
+.rte a.btn,
+.rte a.button {
+  display: inline-block;
+  padding: 0.6em 1.4em;
+  border-radius: var(--rte-border-radius);
+  background: var(--rte-color-link);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.rte a.btn:hover,
+.rte a.button:hover {
+  background: var(--rte-color-link-hover);
+  color: #fff;
+}
+
+
+/* ─── Print Styles ───────────────────────────────────────────────────────────── */
+@media print {
+  .rte a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #555;
+  }
+
+  .rte pre,
+  .rte blockquote {
+    page-break-inside: avoid;
+  }
+
+  .rte img {
+    max-width: 100% !important;
+  }
+}
+
+
+/* ─── Reduced Motion ─────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .rte a,
+  .rte a.btn,
+  .rte a.button {
+    transition: none;
+  }
+}
+
+
+/* ─── Responsive Adjustments ─────────────────────────────────────────────────── */
+@media screen and (max-width: 767px) {
+  .rte h1 { font-size: 1.6em; }
+  .rte h2 { font-size: 1.35em; }
+  .rte h3 { font-size: 1.15em; }
+
+  .rte ul,
+  .rte ol {
+    margin-left: 1.25em;
+  }
+
+  .rte blockquote {
+    padding: 0.75em 1em 0.75em 1.1em;
+  }
+
+  /* Un-float images on mobile */
+  .rte .align-left,
+  .rte .align-right,
+  .rte img[style*="float"] {
+    float: none;
+    margin: 0 0 1em 0;
+    display: block;
+  }
+}
