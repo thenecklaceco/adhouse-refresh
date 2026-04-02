@@ -3605,7 +3605,7 @@ details-disclosure > details {
 /* â”€â”€â”€ CSS Custom Properties (override in your theme's base.css) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 :root {
   --rte-font-family: inherit;
-  --rte-font-size: 2rem;      /* 17px base */
+  --rte-font-size: 1.2625rem;      /* 17px base */
   --rte-line-height: 1.8;
   --rte-color-text: #1a1a1a;
   --rte-color-heading: #111111;
