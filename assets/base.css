@@ -3595,20 +3595,18 @@ details-disclosure > details {
     transform: translateX(100%) scaleX(0);
   }
 }
-
-
 /* =============================================================================
-   SHOPIFY RTE (Rich Text Editor) — Complete Stylesheet
+   SHOPIFY RTE (Rich Text Editor) â€” Complete Stylesheet
    Compatible with: Dawn, Debut, Narrative, Brooklyn, Venture, Prestige,
    Impulse, Pipeline, Turbo, and most custom Shopify themes.
    Usage: Add .rte class to any wrapper around metafield / page / blog content.
    ============================================================================= */
 
-/* ─── CSS Custom Properties (override in your theme's base.css) ─────────────── */
+/* â”€â”€â”€ CSS Custom Properties (override in your theme's base.css) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 :root {
   --rte-font-family: inherit;
-  --rte-font-size: 1rem;           /* 16px base */
-  --rte-line-height: 1.75;
+  --rte-font-size: 1.0625rem;      /* 17px base */
+  --rte-line-height: 1.8;
   --rte-color-text: #1a1a1a;
   --rte-color-heading: #111111;
   --rte-color-link: #0066cc;
@@ -3631,7 +3629,7 @@ details-disclosure > details {
 }
 
 
-/* ─── Base Container ─────────────────────────────────────────────────────────── */
+/* â”€â”€â”€ Base Container â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .rte {
   font-family: var(--rte-font-family);
   font-size: var(--rte-font-size);
@@ -3649,7 +3647,7 @@ details-disclosure > details {
 .rte > *:last-child  { margin-bottom: 0 !important; }
 
 
-/* ─── Headings ───────────────────────────────────────────────────────────────── */
+/* â”€â”€â”€ Headings â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .rte h1,
 .rte h2,
 .rte h3,
@@ -3664,14 +3662,14 @@ details-disclosure > details {
   letter-spacing: -0.01em;
 }
 
-.rte h1 { font-size: 2em; }
-.rte h2 { font-size: 1.6em; }
-.rte h3 { font-size: 1.35em; }
-.rte h4 { font-size: 1.15em; }
-.rte h5 { font-size: 1em; }
-.rte h6 { font-size: 0.9em; color: #666; }
+.rte h1 { font-size: 2.25em; }   /* ~38px */
+.rte h2 { font-size: 1.875em; } /* ~32px */
+.rte h3 { font-size: 1.5em; }   /* ~26px */
+.rte h4 { font-size: 1.25em; }  /* ~21px */
+.rte h5 { font-size: 1.125em; } /* ~19px */
+.rte h6 { font-size: 1em; color: #666; } /* ~17px */
 
-/* Heading immediately after heading — reduce gap */
+/* Heading immediately after heading â€” reduce gap */
 .rte h1 + h2,
 .rte h2 + h3,
 .rte h3 + h4,
@@ -3681,7 +3679,7 @@ details-disclosure > details {
 }
 
 
-/* ─── Paragraphs ─────────────────────────────────────────────────────────────── */
+/* â”€â”€â”€ Paragraphs â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .rte p {
   margin: 0 0 var(--rte-spacing-base);
 }
@@ -3691,7 +3689,7 @@ details-disclosure > details {
 }
 
 
-/* ─── Links ──────────────────────────────────────────────────────────────────── */
+/* â”€â”€â”€ Links â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .rte a {
   color: var(--rte-color-link);
   text-decoration: underline;
@@ -3713,7 +3711,7 @@ details-disclosure > details {
 }
 
 
-/* ─── Strong / Em / Mark ─────────────────────────────────────────────────────── */
+/* â”€â”€â”€ Strong / Em / Mark â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .rte strong,
 .rte b {
   font-weight: 700;
@@ -3743,7 +3741,7 @@ details-disclosure > details {
 }
 
 .rte small {
-  font-size: 0.85em;
+  font-size: 0.9em;    /* ~15px, was 0.85em */
 }
 
 .rte sup,
@@ -3762,7 +3760,7 @@ details-disclosure > details {
 }
 
 
-/* ─── Lists ──────────────────────────────────────────────────────────────────── */
+/* â”€â”€â”€ Lists â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .rte ul,
 .rte ol {
   margin: 0 0 var(--rte-spacing-base) 1.5em;
@@ -3797,7 +3795,7 @@ details-disclosure > details {
 .rte dd { margin: 0 0 0.25em 1.5em; }
 
 
-/* ─── Blockquote ─────────────────────────────────────────────────────────────── */
+/* â”€â”€â”€ Blockquote â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .rte blockquote {
   margin: 1.5em 0;
   padding: 1em 1.25em 1em 1.5em;
@@ -3813,15 +3811,15 @@ details-disclosure > details {
 .rte blockquote cite {
   display: block;
   margin-top: 0.75em;
-  font-size: 0.875em;
+  font-size: 0.9em;      /* ~15px */
   font-style: normal;
   color: #888;
 }
 
-.rte blockquote cite::before { content: "— "; }
+.rte blockquote cite::before { content: "â€” "; }
 
 
-/* ─── Horizontal Rule ────────────────────────────────────────────────────────── */
+/* â”€â”€â”€ Horizontal Rule â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .rte hr {
   border: none;
   border-top: 1px solid var(--rte-color-hr);
@@ -3829,10 +3827,10 @@ details-disclosure > details {
 }
 
 
-/* ─── Inline Code & Pre / Code Block ────────────────────────────────────────── */
+/* â”€â”€â”€ Inline Code & Pre / Code Block â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .rte code {
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-  font-size: 0.875em;
+  font-size: 0.9375em;   /* ~16px */
   background: var(--rte-color-code-bg);
   color: var(--rte-color-code-text);
   padding: 0.15em 0.4em;
@@ -3848,7 +3846,7 @@ details-disclosure > details {
   overflow-x: auto;
   margin: 0 0 var(--rte-spacing-base);
   line-height: 1.6;
-  font-size: 0.875em;
+  font-size: 0.9375em;   /* ~16px */
   -webkit-overflow-scrolling: touch;
 }
 
@@ -3861,7 +3859,7 @@ details-disclosure > details {
 }
 
 
-/* ─── Images ─────────────────────────────────────────────────────────────────── */
+/* â”€â”€â”€ Images â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .rte img {
   max-width: 100%;
   height: auto;
@@ -3882,19 +3880,19 @@ details-disclosure > details {
 
 .rte figcaption {
   margin-top: 0.5em;
-  font-size: 0.85em;
+  font-size: 0.9em;      /* ~15px */
   color: #888;
   text-align: center;
   font-style: italic;
 }
 
 
-/* ─── Tables ─────────────────────────────────────────────────────────────────── */
+/* â”€â”€â”€ Tables â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .rte table {
   width: 100%;
   border-collapse: collapse;
   margin: 1.5em 0;
-  font-size: 0.95em;
+  font-size: 1em;          /* matches body, ~17px */
   overflow-x: auto;
   display: block;           /* allows horizontal scroll on mobile */
   -webkit-overflow-scrolling: touch;
@@ -3925,7 +3923,7 @@ details-disclosure > details {
   background: rgba(0, 0, 0, 0.025);
 }
 
-/* Responsive table wrapper — use this in Liquid:
+/* Responsive table wrapper â€” use this in Liquid:
    <div class="rte-table-wrap"><table>...</table></div> */
 .rte-table-wrap {
   overflow-x: auto;
@@ -3939,7 +3937,7 @@ details-disclosure > details {
 }
 
 
-/* ─── Embedded Media (iframes / video) ──────────────────────────────────────── */
+/* â”€â”€â”€ Embedded Media (iframes / video) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .rte iframe,
 .rte video,
 .rte embed,
@@ -3972,7 +3970,7 @@ details-disclosure > details {
 }
 
 
-/* ─── Shopify-specific: Alignment classes from RTE toolbar ──────────────────── */
+/* â”€â”€â”€ Shopify-specific: Alignment classes from RTE toolbar â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .rte .text-left,
 .rte [style*="text-align: left"],
 .rte [align="left"] {
@@ -3991,7 +3989,7 @@ details-disclosure > details {
   text-align: right;
 }
 
-/* Shopify injects inline style="text-align:..." — honour those */
+/* Shopify injects inline style="text-align:..." â€” honour those */
 .rte [style*="text-align"] { /* noop, already inherits */ }
 
 /* Image alignment (Shopify adds float via inline style or class) */
@@ -4022,19 +4020,19 @@ details-disclosure > details {
 }
 
 
-/* ─── Shopify Metafield: Color Swatch / Tag Pills (bonus) ───────────────────── */
+/* â”€â”€â”€ Shopify Metafield: Color Swatch / Tag Pills (bonus) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .rte .tag {
   display: inline-block;
   padding: 0.2em 0.6em;
   border-radius: 2em;
   background: #f0f0f0;
-  font-size: 0.8em;
+  font-size: 0.9em;      /* ~15px */
   color: #444;
   margin: 0.1em;
 }
 
 
-/* ─── Button-like links (Shopify pages often embed CTA links) ───────────────── */
+/* â”€â”€â”€ Button-like links (Shopify pages often embed CTA links) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .rte a.btn,
 .rte a.button {
   display: inline-block;
@@ -4054,7 +4052,7 @@ details-disclosure > details {
 }
 
 
-/* ─── Print Styles ───────────────────────────────────────────────────────────── */
+/* â”€â”€â”€ Print Styles â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 @media print {
   .rte a[href]::after {
     content: " (" attr(href) ")";
@@ -4073,7 +4071,7 @@ details-disclosure > details {
 }
 
 
-/* ─── Reduced Motion ─────────────────────────────────────────────────────────── */
+/* â”€â”€â”€ Reduced Motion â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 @media (prefers-reduced-motion: reduce) {
   .rte a,
   .rte a.btn,
@@ -4083,11 +4081,11 @@ details-disclosure > details {
 }
 
 
-/* ─── Responsive Adjustments ─────────────────────────────────────────────────── */
+/* â”€â”€â”€ Responsive Adjustments â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 @media screen and (max-width: 767px) {
-  .rte h1 { font-size: 1.6em; }
-  .rte h2 { font-size: 1.35em; }
-  .rte h3 { font-size: 1.15em; }
+  .rte h1 { font-size: 1.875em; } /* ~32px */
+  .rte h2 { font-size: 1.5em; }   /* ~26px */
+  .rte h3 { font-size: 1.25em; }  /* ~21px */
 
   .rte ul,
   .rte ol {
