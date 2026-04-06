@@ -70,51 +70,72 @@
       ],
       "settings": {}
     },
-    "collection_list_9kCkcQ": {
-      "type": "collection-list",
+    "17754835371621cc6e": {
+      "type": "_blocks",
       "blocks": {
-        "featured_collection_6JCDax": {
-          "type": "featured_collection",
+        "ai_gen_block_5826ff4_f3DQTM": {
+          "type": "ai_gen_block_5826ff4",
           "settings": {
-            "collection": "🌟-best-seller"
-          }
-        },
-        "featured_collection_UmrT4J": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "🆕-new-arrival"
-          }
-        },
-        "featured_collection_AAe4Ci": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "❤️-customer-favourites"
-          }
+            "collection_list": [
+              "bangles",
+              "earrings",
+              "frontpage",
+              "jewelry-example-products",
+              "necklace"
+            ],
+            "show_collection_title": true,
+            "show_product_count": false,
+            "show_description": false,
+            "heading": "Our Range, Checkout Everything",
+            "heading_size": 36,
+            "heading_color": "#422a24",
+            "heading_alignment": "center",
+            "heading_spacing": 40,
+            "min_card_width": 240,
+            "min_card_width_mobile": 140,
+            "grid_gap": 30,
+            "grid_gap_mobile": 20,
+            "container_width": 1200,
+            "horizontal_padding": 20,
+            "circular_image": true,
+            "card_background": "#fcfbfa",
+            "card_border_width": 1,
+            "card_border_color": "#e5e5e5",
+            "image_border_radius": 18,
+            "image_aspect_ratio": 100,
+            "image_zoom_scale": 1.1,
+            "shadow_offset": 4,
+            "shadow_blur": 10,
+            "shadow_opacity": 0.1,
+            "hover_lift": 4,
+            "hover_shadow_offset": 10,
+            "hover_shadow_blur": 20,
+            "hover_shadow_opacity": 0.2,
+            "collection_title_size": 16,
+            "collection_title_color": "#422a24",
+            "title_font_weight": "600",
+            "title_position": "center",
+            "content_padding_top": 15,
+            "content_gap": 8,
+            "product_count_size": 14,
+            "product_count_color": "#a46959",
+            "description_size": 14,
+            "description_color": "#666666",
+            "section_padding_top": 50,
+            "section_padding_bottom": 50
+          },
+          "blocks": {}
         }
       },
       "block_order": [
-        "featured_collection_6JCDax",
-        "featured_collection_UmrT4J",
-        "featured_collection_AAe4Ci"
+        "ai_gen_block_5826ff4_f3DQTM"
       ],
-      "name": "t:sections.collection-list.presets.name",
-      "settings": {
-        "title": "<strong>Our Range, Checkout Everything</strong>",
-        "heading_size": "h2",
-        "image_ratio": "adapt",
-        "columns_desktop": 3,
-        "color_scheme": "",
-        "show_view_all": false,
-        "columns_mobile": "1",
-        "swipe_on_mobile": true,
-        "padding_top": 72,
-        "padding_bottom": 24
-      }
+      "settings": {}
     },
     "featured-collection-0": {
       "type": "featured-collection",
       "settings": {
-        "collection": "🆕-new-arrival",
+        "collection": "bangles",
         "products_to_show": 4,
         "title": "<strong>New Arrivals</strong>",
         "heading_size": "h2",
@@ -202,7 +223,7 @@
   },
   "order": [
     "17748401076dce442d",
-    "collection_list_9kCkcQ",
+    "17754835371621cc6e",
     "featured-collection-0",
     "featured_collection_rTzYW9",
     "blocks_4FyATH"
