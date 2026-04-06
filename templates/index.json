@@ -95,7 +95,7 @@
             "min_card_width_mobile": 140,
             "grid_gap": 30,
             "grid_gap_mobile": 20,
-            "container_width": 1200,
+            "container_width": 1600,
             "horizontal_padding": 20,
             "circular_image": true,
             "card_background": "#fcfbfa",
