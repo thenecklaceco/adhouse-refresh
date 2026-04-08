@@ -3605,7 +3605,7 @@ details-disclosure > details {
 /* â”€â”€â”€ CSS Custom Properties (override in your theme's base.css) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 :root {
   --rte-font-family: inherit;
-  --rte-font-size: 1.2625rem;      /* 17px base */
+  --rte-font-size: 1.4625rem;      /* 17px base */
   --rte-line-height: 1.8;
   --rte-color-text: #1a1a1a;
   --rte-color-heading: #111111;
@@ -4104,4 +4104,14 @@ details-disclosure > details {
     margin: 0 0 1em 0;
     display: block;
   }
+}
+
+[data-shopify-app-embed="c26b7b17-273d-4800-af62-8ec88ba18251"] {
+  position: absolute !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  clip: rect(0, 0, 0, 0) !important;
 }
