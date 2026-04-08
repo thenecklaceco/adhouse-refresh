@@ -43,6 +43,7 @@
         "text_PaehHh",
         "buttons_8qtiBH"
       ],
+      "disabled": true,
       "name": "t:sections.image-banner.presets.name",
       "settings": {
         "image": "shopify://shop_images/Untitled_design.png",
@@ -57,69 +58,6 @@
         "mobile_content_alignment": "center",
         "show_text_below": true
       }
-    },
-    "177563805611ab4901": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_7fe00ad_raxhFB": {
-          "type": "ai_gen_block_7fe00ad",
-          "settings": {
-            "container_width": 1200,
-            "columns_desktop": 4,
-            "columns_tablet": 2,
-            "columns_mobile": "1",
-            "mobile_layout": "stack",
-            "alignment": "center",
-            "padding_top_desktop": 40,
-            "padding_bottom_desktop": 40,
-            "padding_top_mobile": 24,
-            "padding_bottom_mobile": 24,
-            "gap_desktop": 32,
-            "gap_mobile": 20,
-            "item_gap": 12,
-            "background_color": "#f7ede8",
-            "background_gradient": "",
-            "text_color_title": "#422a24",
-            "text_color_subtitle": "#835447",
-            "icon_color": "#a46959",
-            "icon_hover_color": "#835447",
-            "icon_size_desktop": 40,
-            "icon_size_mobile": 32,
-            "title_size_desktop": 14,
-            "title_size_mobile": 12,
-            "title_weight": 700,
-            "title_uppercase": true,
-            "subtitle_size_desktop": 13,
-            "subtitle_size_mobile": 11,
-            "subtitle_weight": 400,
-            "show_dividers": true,
-            "divider_color": "#835447",
-            "divider_opacity": 20,
-            "enable_hover": true,
-            "item_1_enabled": true,
-            "icon_1": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z\"></path></svg>",
-            "title_1": "Well trusted",
-            "subtitle_1": "Over 100k customers",
-            "item_2_enabled": true,
-            "icon_2": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polygon points=\"13 2 3 14 12 14 11 22 21 10 12 10 13 2\"></polygon></svg>",
-            "title_2": "Super fast",
-            "subtitle_2": "With express delivery",
-            "item_3_enabled": true,
-            "icon_3": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z\"></path></svg>",
-            "title_3": "Expert help",
-            "subtitle_3": "Seven days a week",
-            "item_4_enabled": true,
-            "icon_4": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><line x1=\"12\" y1=\"1\" x2=\"12\" y2=\"23\"></line><path d=\"M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6\"></path></svg>",
-            "title_4": "Best prices",
-            "subtitle_4": "Unbeatable value"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_7fe00ad_raxhFB"
-      ],
-      "settings": {}
     },
     "17754835371621cc6e": {
       "type": "_blocks",
@@ -210,6 +148,69 @@
         "padding_top": 24,
         "padding_bottom": 60
       }
+    },
+    "177563805611ab4901": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_7fe00ad_raxhFB": {
+          "type": "ai_gen_block_7fe00ad",
+          "settings": {
+            "container_width": 1200,
+            "columns_desktop": 4,
+            "columns_tablet": 2,
+            "columns_mobile": "1",
+            "mobile_layout": "stack",
+            "alignment": "center",
+            "padding_top_desktop": 40,
+            "padding_bottom_desktop": 40,
+            "padding_top_mobile": 24,
+            "padding_bottom_mobile": 24,
+            "gap_desktop": 32,
+            "gap_mobile": 20,
+            "item_gap": 12,
+            "background_color": "#f7ede8",
+            "background_gradient": "",
+            "text_color_title": "#422a24",
+            "text_color_subtitle": "#835447",
+            "icon_color": "#a46959",
+            "icon_hover_color": "#835447",
+            "icon_size_desktop": 40,
+            "icon_size_mobile": 32,
+            "title_size_desktop": 14,
+            "title_size_mobile": 12,
+            "title_weight": 700,
+            "title_uppercase": true,
+            "subtitle_size_desktop": 13,
+            "subtitle_size_mobile": 11,
+            "subtitle_weight": 400,
+            "show_dividers": true,
+            "divider_color": "#835447",
+            "divider_opacity": 20,
+            "enable_hover": true,
+            "item_1_enabled": true,
+            "icon_1": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z\"></path></svg>",
+            "title_1": "Well trusted",
+            "subtitle_1": "Over 100k customers",
+            "item_2_enabled": true,
+            "icon_2": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polygon points=\"13 2 3 14 12 14 11 22 21 10 12 10 13 2\"></polygon></svg>",
+            "title_2": "Super fast",
+            "subtitle_2": "With express delivery",
+            "item_3_enabled": true,
+            "icon_3": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z\"></path></svg>",
+            "title_3": "Expert help",
+            "subtitle_3": "Seven days a week",
+            "item_4_enabled": true,
+            "icon_4": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><line x1=\"12\" y1=\"1\" x2=\"12\" y2=\"23\"></line><path d=\"M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6\"></path></svg>",
+            "title_4": "Best prices",
+            "subtitle_4": "Unbeatable value"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_7fe00ad_raxhFB"
+      ],
+      "settings": {}
     },
     "featured_collection_rTzYW9": {
       "type": "featured-collection",
@@ -303,11 +304,11 @@
     }
   },
   "order": [
+    "17748401076dce442d",
     "image_banner_nYYgaE",
     "17754835371621cc6e",
     "featured-collection-0",
     "177563805611ab4901",
-    "featured_collection_rTzYW9",
-    "17748401076dce442d"
+    "featured_collection_rTzYW9"
   ]
 }
