@@ -186,39 +186,8 @@
         "columns_mobile": "2",
         "swipe_on_mobile": false,
         "padding_top": 36,
-        "padding_bottom": 36
+        "padding_bottom": 72
       }
-    },
-    "blocks_4FyATH": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_51d890b_Ej9CJe": {
-          "type": "ai_gen_block_51d890b",
-          "settings": {
-            "message": "We typically respond within 24 hours. Your trust means everything to us — just like every piece of jewellery we craft.",
-            "show_icon": true,
-            "desktop_width_percent": 100,
-            "section_padding": 60,
-            "inner_padding": 40,
-            "border_radius": 18,
-            "border_width": 1,
-            "text_size": 16,
-            "icon_size": 50,
-            "background_color": "#f7f7f7",
-            "card_bg_color": "#fcfbfa",
-            "border_color": "#a46959",
-            "text_color": "#422a24",
-            "highlight_color": "#a46959",
-            "icon_color": "#a46959"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_51d890b_Ej9CJe"
-      ],
-      "name": "Trust message",
-      "settings": {}
     },
     "177563805611ab4901": {
       "type": "_blocks",
@@ -239,7 +208,7 @@
             "gap_desktop": 32,
             "gap_mobile": 20,
             "item_gap": 12,
-            "background_color": "#f7f7f7",
+            "background_color": "#f7ede8",
             "background_gradient": "",
             "text_color_title": "#422a24",
             "text_color_subtitle": "#835447",
@@ -289,7 +258,6 @@
     "17754835371621cc6e",
     "featured-collection-0",
     "featured_collection_rTzYW9",
-    "blocks_4FyATH",
     "177563805611ab4901"
   ]
 }
