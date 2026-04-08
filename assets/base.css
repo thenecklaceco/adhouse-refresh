@@ -4105,13 +4105,3 @@ details-disclosure > details {
     display: block;
   }
 }
-
-[data-shopify-app-embed="c26b7b17-273d-4800-af62-8ec88ba18251"] {
-  position: absolute !important;
-  width: 0 !important;
-  height: 0 !important;
-  overflow: hidden !important;
-  opacity: 0 !important;
-  pointer-events: none !important;
-  clip: rect(0, 0, 0, 0) !important;
-}
