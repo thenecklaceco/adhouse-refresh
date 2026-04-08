@@ -58,67 +58,6 @@
         "show_text_below": true
       }
     },
-    "17748401076dce442d": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_eb9aa5a_LeJTBQ": {
-          "type": "ai_gen_block_eb9aa5a",
-          "settings": {
-            "section_height_mobile": 500,
-            "section_height_desktop": 700,
-            "overlay_color": "#000000",
-            "overlay_opacity": 20,
-            "content_max_width": 600,
-            "content_padding_mobile": 20,
-            "content_padding_desktop": 40,
-            "content_background_color": "#000000",
-            "content_background_opacity": 75,
-            "content_border_radius": 12,
-            "gap_between_elements": 20,
-            "heading_color": "#ffffff",
-            "heading_font_size_mobile": 32,
-            "heading_font_size_desktop": 56,
-            "subheading_color": "#ffffff",
-            "subheading_font_size_mobile": 16,
-            "subheading_font_size_desktop": 20,
-            "button_color": "#835447",
-            "button_text_color": "#ffffff",
-            "button_hover_color": "#a46959",
-            "button_hover_text_color": "#ffffff",
-            "button_font_size_mobile": 14,
-            "button_font_size_desktop": 18,
-            "button_padding_mobile": 12,
-            "button_padding_desktop": 16,
-            "button_border_radius_mobile": 4,
-            "button_border_radius_desktop": 4,
-            "slide_1_enabled": true,
-            "slide_1_left_image": "shopify://shop_images/IMG_1075.jpg",
-            "slide_1_right_image": "shopify://shop_images/jewelry-product-3.jpg",
-            "slide_1_heading": "Discover Our Collection",
-            "slide_1_subheading": "Explore premium jewelry crafted with elegance and care",
-            "slide_1_button_text": "Shop Now",
-            "slide_1_button_link": "",
-            "slide_2_enabled": true,
-            "slide_2_left_image": "shopify://shop_images/jewelry-product-4.jpg",
-            "slide_2_right_image": "shopify://shop_images/IMG_1049.jpg",
-            "slide_2_heading": "New Arrivals",
-            "slide_2_subheading": "Fresh designs for the modern woman",
-            "slide_2_button_text": "Explore",
-            "slide_2_button_link": "",
-            "slide_3_enabled": false,
-            "slide_3_heading": "Limited Edition",
-            "slide_3_subheading": "Exclusive pieces you won't find anywhere else",
-            "slide_3_button_text": "View Collection",
-            "slide_3_button_link": ""
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_eb9aa5a_LeJTBQ"
-      ],
-      "settings": {}
-    },
     "17754835371621cc6e": {
       "type": "_blocks",
       "blocks": {
@@ -300,14 +239,75 @@
         "ai_gen_block_7fe00ad_raxhFB"
       ],
       "settings": {}
+    },
+    "17748401076dce442d": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_eb9aa5a_LeJTBQ": {
+          "type": "ai_gen_block_eb9aa5a",
+          "settings": {
+            "section_height_mobile": 500,
+            "section_height_desktop": 700,
+            "overlay_color": "#000000",
+            "overlay_opacity": 20,
+            "content_max_width": 600,
+            "content_padding_mobile": 20,
+            "content_padding_desktop": 40,
+            "content_background_color": "#000000",
+            "content_background_opacity": 75,
+            "content_border_radius": 12,
+            "gap_between_elements": 20,
+            "heading_color": "#ffffff",
+            "heading_font_size_mobile": 32,
+            "heading_font_size_desktop": 56,
+            "subheading_color": "#ffffff",
+            "subheading_font_size_mobile": 16,
+            "subheading_font_size_desktop": 20,
+            "button_color": "#835447",
+            "button_text_color": "#ffffff",
+            "button_hover_color": "#a46959",
+            "button_hover_text_color": "#ffffff",
+            "button_font_size_mobile": 14,
+            "button_font_size_desktop": 18,
+            "button_padding_mobile": 12,
+            "button_padding_desktop": 16,
+            "button_border_radius_mobile": 4,
+            "button_border_radius_desktop": 4,
+            "slide_1_enabled": true,
+            "slide_1_left_image": "shopify://shop_images/IMG_1075.jpg",
+            "slide_1_right_image": "shopify://shop_images/jewelry-product-3.jpg",
+            "slide_1_heading": "Discover Our Collection",
+            "slide_1_subheading": "Explore premium jewelry crafted with elegance and care",
+            "slide_1_button_text": "Shop Now",
+            "slide_1_button_link": "",
+            "slide_2_enabled": true,
+            "slide_2_left_image": "shopify://shop_images/jewelry-product-4.jpg",
+            "slide_2_right_image": "shopify://shop_images/IMG_1049.jpg",
+            "slide_2_heading": "New Arrivals",
+            "slide_2_subheading": "Fresh designs for the modern woman",
+            "slide_2_button_text": "Explore",
+            "slide_2_button_link": "",
+            "slide_3_enabled": false,
+            "slide_3_heading": "Limited Edition",
+            "slide_3_subheading": "Exclusive pieces you won't find anywhere else",
+            "slide_3_button_text": "View Collection",
+            "slide_3_button_link": ""
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_eb9aa5a_LeJTBQ"
+      ],
+      "settings": {}
     }
   },
   "order": [
     "image_banner_nYYgaE",
-    "17748401076dce442d",
     "17754835371621cc6e",
     "featured-collection-0",
     "featured_collection_rTzYW9",
-    "177563805611ab4901"
+    "177563805611ab4901",
+    "17748401076dce442d"
   ]
 }
