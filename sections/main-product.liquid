@@ -680,6 +680,20 @@
             {{ 'products.product.view_full_details' | t }}
             {{- 'icon-arrow.svg' | inline_asset_content -}}
           </a>
+          Working
+          {% if product.metafields.custom.care_instruction != blank %}
+  <div class="care-instructions">
+    <h3>Care Instructions</h3>
+    <ul>
+      {% assign care_items = product.metafields.custom.care_instruction.value | split: "\n" %}
+      {% for item in care_items %}
+        {% if item != blank %}
+          <li>{{ item }}</li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}
         </section>
       </div>
     </div>
