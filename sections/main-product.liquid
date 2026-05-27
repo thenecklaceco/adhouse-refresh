@@ -742,6 +742,11 @@
 
     <script type="application/ld+json">
       {{ product | structured_data }}
+      var productMetafields = {
+    care_instructions: {{ product.metafields.custom.care_instructions.value | json }}
+  };
+
+  console.log('Care Instructions:', productMetafields.care_instructions);
     </script>
   </div>
 </product-info>
