@@ -680,6 +680,14 @@
             {{ 'products.product.view_full_details' | t }}
             {{- 'icon-arrow.svg' | inline_asset_content -}}
           </a>
+          <div>
+            Working
+            {% if product.metafields.custom.care_instructions != blank %}
+              <div class="care-instructions">
+                {{ product.metafields.custom.care_instructions.value }}
+              </div>
+            {% endif %}
+          </div>
         </section>
       </div>
     </div>
