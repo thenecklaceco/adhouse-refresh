@@ -680,20 +680,29 @@
             {{ 'products.product.view_full_details' | t }}
             {{- 'icon-arrow.svg' | inline_asset_content -}}
           </a>
-          Working
           {% if product.metafields.custom.care_instruction != blank %}
-  <div class="care-instructions">
-    <h3>Care Instructions</h3>
-    <ul>
-      {% assign care_items = product.metafields.custom.care_instruction.value | split: "\n" %}
-      {% for item in care_items %}
-        {% if item != blank %}
-          <li>{{ item }}</li>
-        {% endif %}
-      {% endfor %}
-    </ul>
-  </div>
-{% endif %}
+            <div class="product__accordion accordion">
+              <details id="Details-care-instruction-{{ section.id }}">
+                <summary>
+                  <div class="summary__title">
+                    {% render 'icon-accordion', icon: 'washing' %}
+                    <h2 class="h4 accordion__title inline-richtext">Care Instructions</h2>
+                  </div>
+                  {{- 'icon-caret.svg' | inline_asset_content -}}
+                </summary>
+                <div class="accordion__content rte">
+                  <ul>
+                    {% assign care_items = product.metafields.custom.care_instruction.value | split: '\n' %}
+                    {% for item in care_items %}
+                      {% if item != blank %}
+                        <li>{{ item }}</li>
+                      {% endif %}
+                    {% endfor %}
+                  </ul>
+                </div>
+              </details>
+            </div>
+          {% endif %}
         </section>
       </div>
     </div>
@@ -749,25 +758,25 @@
     <script type="application/ld+json">
       {{ product | structured_data }}
     </script>
- <script id="product-metafield-debug" type="application/json">
-  {
-    "product_id": {{ product.id }},
-    "product_title": {{ product.title | json }},
-    "all_metafields": {{ product.metafields | json }},
-    "custom_namespace": {{ product.metafields.custom | json }},
-    "care_instructions": {{ product.metafields.custom.care_instructions | json }}
-  }
-</script>
+    <script id="product-metafield-debug" type="application/json">
+      {
+        "product_id": {{ product.id }},
+        "product_title": {{ product.title | json }},
+        "all_metafields": {{ product.metafields | json }},
+        "custom_namespace": {{ product.metafields.custom | json }},
+        "care_instructions": {{ product.metafields.custom.care_instructions | json }}
+      }
+    </script>
 
-<script>
-  var debugData = JSON.parse(document.getElementById('product-metafield-debug').textContent);
-  console.log('=== PRODUCT DEBUG ===');
-  console.log('Product ID:', debugData.product_id);
-  console.log('Product Title:', debugData.product_title);
-  console.log('All Metafields:', debugData.all_metafields);
-  console.log('Custom Namespace:', debugData.custom_namespace);
-  console.log('Care Instructions:', debugData.care_instructions);
-</script>
+    <script>
+      var debugData = JSON.parse(document.getElementById('product-metafield-debug').textContent);
+      console.log('=== PRODUCT DEBUG ===');
+      console.log('Product ID:', debugData.product_id);
+      console.log('Product Title:', debugData.product_title);
+      console.log('All Metafields:', debugData.all_metafields);
+      console.log('Custom Namespace:', debugData.custom_namespace);
+      console.log('Care Instructions:', debugData.care_instructions);
+    </script>
   </div>
 </product-info>
 
