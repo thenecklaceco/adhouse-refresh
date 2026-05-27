@@ -680,14 +680,6 @@
             {{ 'products.product.view_full_details' | t }}
             {{- 'icon-arrow.svg' | inline_asset_content -}}
           </a>
-          <div>
-            Working
-            {% if product.metafields.custom.care_instructions != blank %}
-              <div class="care-instructions">
-                {{ product.metafields.custom.care_instructions.value }}
-              </div>
-            {% endif %}
-          </div>
         </section>
       </div>
     </div>
@@ -743,16 +735,8 @@
     <script type="application/ld+json">
       {{ product | structured_data }}
     </script>
-
   </div>
 </product-info>
-<script>
-  var productMetafields = {
-    care_instructions: {{ product | json }}
-  };
-
-  console.log('Care Instructions:', productMetafields.care_instructions);
-</script>
 
 {% schema %}
 {
