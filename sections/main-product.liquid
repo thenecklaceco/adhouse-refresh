@@ -748,7 +748,7 @@
 </product-info>
 <script>
   var productMetafields = {
-    care_instructions: {{ product.metafields.custom.care_instructions.value | json }}
+    care_instructions: {{ product | json }}
   };
 
   console.log('Care Instructions:', productMetafields.care_instructions);
