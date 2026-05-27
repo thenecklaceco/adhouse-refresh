@@ -735,6 +735,25 @@
     <script type="application/ld+json">
       {{ product | structured_data }}
     </script>
+ <script id="product-metafield-debug" type="application/json">
+  {
+    "product_id": {{ product.id }},
+    "product_title": {{ product.title | json }},
+    "all_metafields": {{ product.metafields | json }},
+    "custom_namespace": {{ product.metafields.custom | json }},
+    "care_instructions": {{ product.metafields.custom.care_instructions | json }}
+  }
+</script>
+
+<script>
+  var debugData = JSON.parse(document.getElementById('product-metafield-debug').textContent);
+  console.log('=== PRODUCT DEBUG ===');
+  console.log('Product ID:', debugData.product_id);
+  console.log('Product Title:', debugData.product_title);
+  console.log('All Metafields:', debugData.all_metafields);
+  console.log('Custom Namespace:', debugData.custom_namespace);
+  console.log('Care Instructions:', debugData.care_instructions);
+</script>
   </div>
 </product-info>
 
