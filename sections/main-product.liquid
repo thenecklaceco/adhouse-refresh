@@ -767,16 +767,6 @@
         "care_instructions": {{ product.metafields.custom.care_instructions | json }}
       }
     </script>
-
-    <script>
-      var debugData = JSON.parse(document.getElementById('product-metafield-debug').textContent);
-      console.log('=== PRODUCT DEBUG ===');
-      console.log('Product ID:', debugData.product_id);
-      console.log('Product Title:', debugData.product_title);
-      console.log('All Metafields:', debugData.all_metafields);
-      console.log('Custom Namespace:', debugData.custom_namespace);
-      console.log('Care Instructions:', debugData.care_instructions);
-    </script>
   </div>
 </product-info>
 
